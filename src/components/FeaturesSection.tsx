@@ -113,7 +113,7 @@ export const FeaturesSection = () => {
               </div>
               <div>
                 <div className="text-3xl font-bold text-yellow-400 mb-2">50%</div>
-                <div className="text-gray-400 text-sm">{t('lessTim eSpent')}</div>
+                <div className="text-gray-400 text-sm">{t('lessTimeSpent')}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-red-400 mb-2">24/7</div>
