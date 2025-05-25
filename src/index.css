@@ -5,54 +5,44 @@
 
 @layer base {
   :root {
-    --background: 12 12% 8%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 95%;
 
-    --card: 12 12% 10%;
+    --card: 0 0% 5%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 12 12% 10%;
+    --popover: 0 0% 5%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 358 86% 52%;
+    --primary: 0 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 12 12% 15%;
+    --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 90%;
 
-    --muted: 12 12% 15%;
+    --muted: 0 0% 10%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 12 12% 20%;
+    --accent: 0 0% 15%;
     --accent-foreground: 0 0% 90%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 12 12% 20%;
-    --input: 12 12% 20%;
-    --ring: 358 86% 52%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 100% 50%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 12 12% 8%;
+    --sidebar-background: 0 0% 0%;
     --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 358 86% 52%;
+    --sidebar-primary: 0 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 12 12% 15%;
+    --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 12 12% 20%;
-    --sidebar-ring: 358 86% 52%;
-
-    /* YouTube-inspired color scheme with premium tech startup feel */
-    --md-sys-color-primary: 358 86% 52%;
-    --md-sys-color-on-primary: 0 0% 100%;
-    --md-sys-color-primary-container: 358 50% 25%;
-    --md-sys-color-on-primary-container: 358 100% 90%;
-    --md-sys-color-surface: 12 12% 8%;
-    --md-sys-color-on-surface: 0 0% 95%;
-    --md-sys-color-surface-container: 12 12% 12%;
-    --md-sys-color-surface-container-high: 12 12% 16%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 100% 50%;
   }
 }
 
@@ -63,32 +53,99 @@
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    background: radial-gradient(ellipse at center, #111111 0%, #000000 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-/* Premium tech startup styling */
+/* Premium startup styling */
 .elevation-8 {
   box-shadow: 0 8px 40px rgba(255, 0, 0, 0.15), 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .surface-container {
-  background: linear-gradient(145deg, hsl(var(--md-sys-color-surface-container)), hsl(var(--md-sys-color-surface-container-high)));
-  color: hsl(var(--md-sys-color-on-surface));
+  background: linear-gradient(145deg, rgba(20, 20, 20, 0.8), rgba(10, 10, 10, 0.9));
   border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
 }
 
 .surface-container-high {
-  background: linear-gradient(145deg, hsl(var(--md-sys-color-surface-container-high)), hsl(var(--md-sys-color-surface-container)));
-  color: hsl(var(--md-sys-color-on-surface));
+  background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(20, 20, 20, 0.9));
   border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
 }
 
-/* Premium gradients */
+/* Premium gradients - Red focused */
 .premium-gradient {
   background: linear-gradient(135deg, #ff0000 0%, #cc0000 50%, #990000 100%);
 }
 
 .tech-glow {
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.3), 0 0 40px rgba(255, 0, 0, 0.1);
+}
+
+/* Custom animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.4s ease-out;
+}
+
+/* Glassmorphism effects */
+.glass {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Text selection */
+::selection {
+  background: rgba(255, 0, 0, 0.3);
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

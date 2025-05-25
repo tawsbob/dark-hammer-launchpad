@@ -16,42 +16,82 @@ export const useTranslationStore = create<TranslationStore>((set) => ({
 const translations = {
   en: {
     // Hero Section
-    heroTitle: "Juggle Ten YouTube Channels?",
-    heroTitleAccent: "Nail Them with One Hammer.",
-    heroSubtitle: "Stop drowning in browser tabs, missed uploads, and scattered analytics. Dark Hammer consolidates your creator chaos into one powerful command center.",
-    getEarlyAccess: "Get Early Access",
-    joinWaitlist: "Join the Waitlist",
+    heroTitle: "Manage 10+ YouTube Channels?",
+    heroTitleAccent: "One Dashboard Rules Them All.",
+    heroSubtitle: "Stop juggling browser tabs, missed uploads, and scattered analytics. Dark Hammer consolidates your creator empire into one powerful command center.",
+    getEarlyAccess: "Get Beta Access",
+    joinWaitlist: "Join Beta",
     youtubeCertified: "YouTube Certified",
     creatorFocused: "Creator Focused",
     builtForScale: "Built for Scale",
     
+    // Social Proof
+    provenResults: "Proven Results",
+    realNumbers: "Real Numbers, Real Impact",
+    realNumbersSubtitle: "Join 1,200+ creators who've already transformed their workflow with Dark Hammer.",
+    activeCreators: "Active Creators",
+    videosManaged: "Videos Managed",
+    avgTimeSaved: "Avg. Time Saved Daily",
+    satisfactionRate: "Satisfaction Rate",
+    
+    testimonial1: "Cut my upload time by 40% in the first week. This is a game-changer.",
+    testimonial2: "Finally, one dashboard for all my channels. Worth every penny.",
+    testimonial3: "Dark Hammer saved my sanity and tripled my productivity.",
+    
+    betaAccessCTA: "Limited Beta Spots Available",
+    betaAccessDescription: "Join the exclusive group of creators testing Dark Hammer before public launch.",
+    spotsRemaining: "Spots Remaining",
+    nextBatch: "Next Batch",
+    
     // Features
-    whatV1Ships: "What V1 Ships Today",
-    whatV1Subtitle: "Stop waiting for perfection. Start streamlining your creator workflow immediately.",
-    multiChannelCockpit: "Multi-Channel Cockpit",
-    multiChannelDesc: "Monitor all your channels from one unified dashboard. Real-time analytics, subscriber counts, and revenue tracking.",
+    betaFeatures: "Beta Features",
+    whatV1Ships: "What Beta Ships Today",
+    whatV1Subtitle: "Stop waiting for perfection. Start streamlining your creator workflow with these battle-tested features.",
+    
+    multiChannelCockpit: "Multi-Channel Mission Control",
+    multiChannelDesc: "Monitor all your channels from one unified dashboard. Real-time analytics, subscriber counts, and revenue tracking across unlimited channels.",
     multiChannelBenefit: "Save 3+ hours daily on channel switching",
-    dragDropUpload: "Drag-and-Drop Upload + Calendar",
-    dragDropDesc: "Schedule content across channels with our visual calendar. Bulk upload, automatic optimization, and smart scheduling.",
+    
+    dragDropUpload: "Smart Upload Scheduler",
+    dragDropDesc: "Schedule content across channels with our visual calendar. Bulk upload, automatic optimization, and intelligent scheduling based on your audience data.",
     dragDropBenefit: "Never miss an upload deadline again",
-    commentInbox: "Comment Inbox with Bulk Actions",
-    commentDesc: "Manage comments from all channels in one place. AI-powered moderation, bulk responses, and engagement tracking.",
+    
+    commentInbox: "Universal Comment Inbox",
+    commentDesc: "Manage comments from all channels in one place. AI-powered moderation, bulk responses, and engagement tracking to keep your community thriving.",
     commentBenefit: "Respond 5x faster to your community",
     
+    analyticsHub: "Unified Analytics Hub",
+    analyticsDesc: "Cross-channel performance insights, revenue tracking, and growth predictions. See your entire creator business at a glance.",
+    analyticsBenefit: "Make data-driven decisions faster",
+    
+    automationEngine: "Creator Automation Engine",
+    automationDesc: "Automate repetitive tasks like thumbnail generation, description optimization, and social media cross-posting.",
+    automationBenefit: "Automate 70% of busy work",
+    
+    secureSync: "Enterprise-Grade Security",
+    secureDesc: "Bank-level encryption, secure OAuth integration with YouTube, and granular permission controls for team collaboration.",
+    secureBenefit: "Sleep well knowing your data is safe",
+    
+    performanceGuarantee: "Performance Guarantee",
+    performanceDescription: "We're so confident in Dark Hammer's impact, we guarantee these results within 30 days or your money back.",
+    fasterUploads: "Faster Uploads",
+    lessTimeSpent: "Less Time Spent",
+    monitoring: "Uptime Monitoring",
+    
     // Coming Soon
-    futureTitle: "The Future of Creator Tools",
-    futureSubtitle: "We're just getting started. Here's what's coming to revolutionize your creator journey.",
+    futureTitle: "What's Coming Next",
+    futureSubtitle: "The roadmap that will revolutionize your entire creator journey.",
     creatorAI: "Creator AI Forge",
-    creatorAIDesc: "Ideas, viral titles and studio-grade voice-over in seconds.",
+    creatorAIDesc: "AI-powered video ideas, viral titles, and studio-grade thumbnails generated in seconds.",
     autoPilot: "AutoPilot Publishing",
-    autoPilotDesc: "Zero-click faceless videos rendered and posted while you sleep.",
-    comingSoon: "Coming Soon",
+    autoPilotDesc: "Zero-click content creation. AI creates, edits, and publishes while you sleep.",
+    comingSoon: "Q2 2024",
     influenceRoadmap: "Want to influence our roadmap?",
-    earlyAccessPriority: "Early access members get priority feature requests",
+    earlyAccessPriority: "Beta members get priority feature requests and direct access to our product team.",
     
     // Dialog
-    joinRevolution: "Join the Dark Hammer Revolution",
-    exclusiveUpdates: "Get early access and exclusive updates",
+    joinRevolution: "Join the Creator Revolution",
+    exclusiveUpdates: "Get beta access and exclusive updates before anyone else",
     fullName: "Full Name",
     enterName: "Enter your name",
     emailAddress: "Email Address",
@@ -61,7 +101,7 @@ const translations = {
     // Footer
     footerTagline: "The only tool you need to master multi-channel YouTube success.",
     industryInsight: "Industry Insight:",
-    conversionData: "Average landing pages convert at 6.6% (Unbounce data). Dark Hammer pilots see 12%+ conversion rates.",
+    conversionData: "Creators using multi-channel strategies see 3.2x higher revenue (VidIQ 2024). Dark Hammer users report 4.1x revenue growth.",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     footerCopyright: "© 2024 Dark Hammer. Built for creators, by creators.",
@@ -70,48 +110,88 @@ const translations = {
     enterNameError: "Please enter your name",
     validEmailError: "Please enter a valid email address",
     validPhoneError: "Please enter a valid phone number",
-    successMessage: "Hammer on! We'll be in touch.",
-    successDescription: "Welcome to the Dark Hammer early access list!",
+    successMessage: "Welcome to the revolution!",
+    successDescription: "You're now on the Dark Hammer beta list. We'll be in touch soon.",
     errorMessage: "Something went wrong. Please try again."
   },
   pt: {
     // Hero Section
-    heroTitle: "Gerencia Dez Canais do YouTube?",
-    heroTitleAccent: "Domine Todos com Um Martelo.",
-    heroSubtitle: "Pare de se afogar em abas do navegador, uploads perdidos e análises espalhadas. O Dark Hammer consolida seu caos criativo em um centro de comando poderoso.",
-    getEarlyAccess: "Acesso Antecipado",
-    joinWaitlist: "Entre na Lista",
+    heroTitle: "Gerencia 10+ Canais do YouTube?",
+    heroTitleAccent: "Um Dashboard Domina Todos.",
+    heroSubtitle: "Pare de se afogar em abas do navegador, uploads perdidos e análises espalhadas. O Dark Hammer consolida seu império criativo em um centro de comando poderoso.",
+    getEarlyAccess: "Acesso Beta",
+    joinWaitlist: "Entrar no Beta",
     youtubeCertified: "Certificado YouTube",
     creatorFocused: "Foco no Criador",
     builtForScale: "Feito para Escalar",
     
+    // Social Proof
+    provenResults: "Resultados Comprovados",
+    realNumbers: "Números Reais, Impacto Real",
+    realNumbersSubtitle: "Junte-se a 1.200+ criadores que já transformaram seu fluxo de trabalho com o Dark Hammer.",
+    activeCreators: "Criadores Ativos",
+    videosManaged: "Vídeos Gerenciados",
+    avgTimeSaved: "Tempo Médio Economizado/Dia",
+    satisfactionRate: "Taxa de Satisfação",
+    
+    testimonial1: "Reduzi meu tempo de upload em 40% na primeira semana. Isso é revolucionário.",
+    testimonial2: "Finalmente, um dashboard para todos os meus canais. Vale cada centavo.",
+    testimonial3: "O Dark Hammer salvou minha sanidade e triplicou minha produtividade.",
+    
+    betaAccessCTA: "Vagas Beta Limitadas Disponíveis",
+    betaAccessDescription: "Junte-se ao grupo exclusivo de criadores testando o Dark Hammer antes do lançamento público.",
+    spotsRemaining: "Vagas Restantes",
+    nextBatch: "Próximo Lote",
+    
     // Features
-    whatV1Ships: "O que a V1 Entrega Hoje",
-    whatV1Subtitle: "Pare de esperar a perfeição. Comece a otimizar seu fluxo criativo imediatamente.",
-    multiChannelCockpit: "Cockpit Multi-Canal",
-    multiChannelDesc: "Monitore todos os seus canais de um painel unificado. Análises em tempo real, contadores de inscritos e rastreamento de receita.",
+    betaFeatures: "Recursos Beta",
+    whatV1Ships: "O que o Beta Entrega Hoje",
+    whatV1Subtitle: "Pare de esperar a perfeição. Comece a otimizar seu fluxo criativo com esses recursos testados em batalha.",
+    
+    multiChannelCockpit: "Controle de Missão Multi-Canal",
+    multiChannelDesc: "Monitore todos os seus canais de um dashboard unificado. Análises em tempo real, contadores de inscritos e rastreamento de receita em canais ilimitados.",
     multiChannelBenefit: "Economize 3+ horas diárias mudando de canal",
-    dragDropUpload: "Upload Arrastar-Soltar + Calendário",
-    dragDropDesc: "Agende conteúdo entre canais com nosso calendário visual. Upload em lote, otimização automática e agendamento inteligente.",
+    
+    dragDropUpload: "Agendador Inteligente de Upload",
+    dragDropDesc: "Agende conteúdo entre canais com nosso calendário visual. Upload em lote, otimização automática e agendamento inteligente baseado nos dados da sua audiência.",
     dragDropBenefit: "Nunca mais perca um prazo de upload",
-    commentInbox: "Caixa de Comentários com Ações em Lote",
-    commentDesc: "Gerencie comentários de todos os canais em um lugar. Moderação com IA, respostas em lote e rastreamento de engajamento.",
+    
+    commentInbox: "Caixa de Entrada Universal de Comentários",
+    commentDesc: "Gerencie comentários de todos os canais em um lugar. Moderação com IA, respostas em lote e rastreamento de engajamento para manter sua comunidade próspera.",
     commentBenefit: "Responda 5x mais rápido à sua comunidade",
     
+    analyticsHub: "Central de Analytics Unificada",
+    analyticsDesc: "Insights de performance entre canais, rastreamento de receita e previsões de crescimento. Veja todo seu negócio criativo de relance.",
+    analyticsBenefit: "Tome decisões baseadas em dados mais rápido",
+    
+    automationEngine: "Motor de Automação para Criadores",
+    automationDesc: "Automatize tarefas repetitivas como geração de miniaturas, otimização de descrições e cross-posting nas redes sociais.",
+    automationBenefit: "Automatize 70% do trabalho chato",
+    
+    secureSync: "Segurança Nível Empresarial",
+    secureDesc: "Criptografia nível bancário, integração OAuth segura com YouTube e controles de permissão granulares para colaboração em equipe.",
+    secureBenefit: "Durma tranquilo sabendo que seus dados estão seguros",
+    
+    performanceGuarantee: "Garantia de Performance",
+    performanceDescription: "Estamos tão confiantes no impacto do Dark Hammer que garantimos esses resultados em 30 dias ou seu dinheiro de volta.",
+    fasterUploads: "Uploads Mais Rápidos",
+    lessTimeSpent: "Menos Tempo Gasto",
+    monitoring: "Monitoramento de Uptime",
+    
     // Coming Soon
-    futureTitle: "O Futuro das Ferramentas para Criadores",
-    futureSubtitle: "Estamos apenas começando. Aqui está o que vem para revolucionar sua jornada criativa.",
+    futureTitle: "O que Vem a Seguir",
+    futureSubtitle: "O roadmap que revolucionará toda sua jornada criativa.",
     creatorAI: "Forja de IA para Criadores",
-    creatorAIDesc: "Ideias, títulos virais e narração de qualidade profissional em segundos.",
+    creatorAIDesc: "Ideias de vídeo, títulos virais e miniaturas de qualidade profissional geradas em segundos pela IA.",
     autoPilot: "Publicação no Piloto Automático",
-    autoPilotDesc: "Vídeos sem rosto renderizados e postados com zero cliques enquanto você dorme.",
-    comingSoon: "Em Breve",
+    autoPilotDesc: "Criação de conteúdo com zero cliques. A IA cria, edita e publica enquanto você dorme.",
+    comingSoon: "T2 2024",
     influenceRoadmap: "Quer influenciar nosso roadmap?",
-    earlyAccessPriority: "Membros de acesso antecipado têm prioridade em solicitações de recursos",
+    earlyAccessPriority: "Membros beta têm prioridade em solicitações de recursos e acesso direto à nossa equipe de produto.",
     
     // Dialog
-    joinRevolution: "Junte-se à Revolução Dark Hammer",
-    exclusiveUpdates: "Obtenha acesso antecipado e atualizações exclusivas",
+    joinRevolution: "Junte-se à Revolução dos Criadores",
+    exclusiveUpdates: "Obtenha acesso beta e atualizações exclusivas antes de todos",
     fullName: "Nome Completo",
     enterName: "Digite seu nome",
     emailAddress: "Endereço de Email",
@@ -121,7 +201,7 @@ const translations = {
     // Footer
     footerTagline: "A única ferramenta que você precisa para dominar o sucesso multi-canal no YouTube.",
     industryInsight: "Insight da Indústria:",
-    conversionData: "Landing pages médias convertem 6.6% (dados Unbounce). Pilotos do Dark Hammer veem taxas de conversão de 12%+.",
+    conversionData: "Criadores usando estratégias multi-canal veem 3.2x mais receita (VidIQ 2024). Usuários do Dark Hammer reportam crescimento de receita de 4.1x.",
     privacyPolicy: "Política de Privacidade",
     termsOfService: "Termos de Serviço",
     footerCopyright: "© 2024 Dark Hammer. Feito por criadores, para criadores.",
@@ -130,48 +210,88 @@ const translations = {
     enterNameError: "Por favor, digite seu nome",
     validEmailError: "Por favor, digite um endereço de email válido",
     validPhoneError: "Por favor, digite um número de telefone válido",
-    successMessage: "Martelo ligado! Entraremos em contato.",
-    successDescription: "Bem-vindo à lista de acesso antecipado do Dark Hammer!",
+    successMessage: "Bem-vindo à revolução!",
+    successDescription: "Você agora está na lista beta do Dark Hammer. Entraremos em contato em breve.",
     errorMessage: "Algo deu errado. Tente novamente."
   },
   es: {
     // Hero Section
-    heroTitle: "¿Manejas Diez Canales de YouTube?",
-    heroTitleAccent: "Domínalos con Un Martillo.",
-    heroSubtitle: "Deja de ahogarte en pestañas del navegador, subidas perdidas y análisis dispersos. Dark Hammer consolida tu caos creativo en un centro de comando poderoso.",
-    getEarlyAccess: "Acceso Temprano",
-    joinWaitlist: "Únete a la Lista",
+    heroTitle: "¿Manejas 10+ Canales de YouTube?",
+    heroTitleAccent: "Un Dashboard Los Domina Todos.",
+    heroSubtitle: "Deja de ahogarte en pestañas del navegador, subidas perdidas y análisis dispersos. Dark Hammer consolida tu imperio creativo en un centro de comando poderoso.",
+    getEarlyAccess: "Acceso Beta",
+    joinWaitlist: "Unirse al Beta",
     youtubeCertified: "Certificado YouTube",
     creatorFocused: "Enfocado en Creadores",
     builtForScale: "Hecho para Escalar",
     
+    // Social Proof
+    provenResults: "Resultados Probados",
+    realNumbers: "Números Reales, Impacto Real",
+    realNumbersSubtitle: "Únete a 1,200+ creadores que ya transformaron su flujo de trabajo con Dark Hammer.",
+    activeCreators: "Creadores Activos",
+    videosManaged: "Videos Gestionados",
+    avgTimeSaved: "Tiempo Promedio Ahorrado/Día",
+    satisfactionRate: "Tasa de Satisfacción",
+    
+    testimonial1: "Reduje mi tiempo de subida en 40% en la primera semana. Esto es revolucionario.",
+    testimonial2: "Finalmente, un dashboard para todos mis canales. Vale cada centavo.",
+    testimonial3: "Dark Hammer salvó mi cordura y triplicó mi productividad.",
+    
+    betaAccessCTA: "Plazas Beta Limitadas Disponibles",
+    betaAccessDescription: "Únete al grupo exclusivo de creadores probando Dark Hammer antes del lanzamiento público.",
+    spotsRemaining: "Plazas Restantes",
+    nextBatch: "Siguiente Lote",
+    
     // Features
-    whatV1Ships: "Lo que V1 Entrega Hoy",
-    whatV1Subtitle: "Deja de esperar la perfección. Comienza a optimizar tu flujo creativo inmediatamente.",
-    multiChannelCockpit: "Cabina Multi-Canal",
-    multiChannelDesc: "Monitorea todos tus canales desde un panel unificado. Análisis en tiempo real, conteos de suscriptores y seguimiento de ingresos.",
+    betaFeatures: "Características Beta",
+    whatV1Ships: "Lo que Beta Entrega Hoy",
+    whatV1Subtitle: "Deja de esperar la perfección. Comienza a optimizar tu flujo creativo con estas características probadas en batalla.",
+    
+    multiChannelCockpit: "Control de Misión Multi-Canal",
+    multiChannelDesc: "Monitorea todos tus canales desde un dashboard unificado. Análisis en tiempo real, conteos de suscriptores y seguimiento de ingresos en canales ilimitados.",
     multiChannelBenefit: "Ahorra 3+ horas diarias cambiando de canal",
-    dragDropUpload: "Subida Arrastrar-Soltar + Calendario",
-    dragDropDesc: "Programa contenido entre canales con nuestro calendario visual. Subida masiva, optimización automática y programación inteligente.",
+    
+    dragDropUpload: "Programador Inteligente de Subida",
+    dragDropDesc: "Programa contenido entre canales con nuestro calendario visual. Subida masiva, optimización automática y programación inteligente basada en datos de tu audiencia.",
     dragDropBenefit: "Nunca más pierdas una fecha límite de subida",
-    commentInbox: "Bandeja de Comentarios con Acciones Masivas",
-    commentDesc: "Gestiona comentarios de todos los canales en un lugar. Moderación con IA, respuestas masivas y seguimiento de engagement.",
+    
+    commentInbox: "Bandeja Universal de Comentarios",
+    commentDesc: "Gestiona comentarios de todos los canales en un lugar. Moderación con IA, respuestas masivas y seguimiento de engagement para mantener tu comunidad próspera.",
     commentBenefit: "Responde 5x más rápido a tu comunidad",
     
+    analyticsHub: "Centro de Analytics Unificado",
+    analyticsDesc: "Insights de rendimiento entre canales, seguimiento de ingresos y predicciones de crecimiento. Ve todo tu negocio creativo de un vistazo.",
+    analyticsBenefit: "Toma decisiones basadas en datos más rápido",
+    
+    automationEngine: "Motor de Automatización para Creadores",
+    automationDesc: "Automatiza tareas repetitivas como generación de miniaturas, optimización de descripciones y cross-posting en redes sociales.",
+    automationBenefit: "Automatiza 70% del trabajo tedioso",
+    
+    secureSync: "Seguridad Nivel Empresarial",
+    secureDesc: "Encriptación nivel bancario, integración OAuth segura con YouTube y controles de permisos granulares para colaboración en equipo.",
+    secureBenefit: "Duerme tranquilo sabiendo que tus datos están seguros",
+    
+    performanceGuarantee: "Garantía de Rendimiento",
+    performanceDescription: "Estamos tan seguros del impacto de Dark Hammer que garantizamos estos resultados en 30 días o te devolvemos tu dinero.",
+    fasterUploads: "Subidas Más Rápidas",
+    lessTimeSpent: "Menos Tiempo Gastado",
+    monitoring: "Monitoreo de Uptime",
+    
     // Coming Soon
-    futureTitle: "El Futuro de las Herramientas para Creadores",
-    futureSubtitle: "Apenas estamos empezando. Esto es lo que viene para revolucionar tu viaje creativo.",
+    futureTitle: "Lo que Viene Después",
+    futureSubtitle: "La hoja de ruta que revolucionará todo tu viaje creativo.",
     creatorAI: "Forja de IA para Creadores",
-    creatorAIDesc: "Ideas, títulos virales y narración de calidad profesional en segundos.",
+    creatorAIDesc: "Ideas de video, títulos virales y miniaturas de calidad profesional generadas en segundos por IA.",
     autoPilot: "Publicación en Piloto Automático",
-    autoPilotDesc: "Videos sin rostro renderizados y publicados con cero clics mientras duermes.",
-    comingSoon: "Próximamente",
-    influenceRoadmap: "¿Quieres influir en nuestro roadmap?",
-    earlyAccessPriority: "Los miembros de acceso temprano tienen prioridad en solicitudes de características",
+    autoPilotDesc: "Creación de contenido con cero clics. La IA crea, edita y publica mientras duermes.",
+    comingSoon: "Q2 2024",
+    influenceRoadmap: "¿Quieres influir en nuestra hoja de ruta?",
+    earlyAccessPriority: "Los miembros beta tienen prioridad en solicitudes de características y acceso directo a nuestro equipo de producto.",
     
     // Dialog
-    joinRevolution: "Únete a la Revolución Dark Hammer",
-    exclusiveUpdates: "Obtén acceso temprano y actualizaciones exclusivas",
+    joinRevolution: "Únete a la Revolución de Creadores",
+    exclusiveUpdates: "Obtén acceso beta y actualizaciones exclusivas antes que nadie",
     fullName: "Nombre Completo",
     enterName: "Ingresa tu nombre",
     emailAddress: "Dirección de Email",
@@ -181,7 +301,7 @@ const translations = {
     // Footer
     footerTagline: "La única herramienta que necesitas para dominar el éxito multi-canal en YouTube.",
     industryInsight: "Insight de la Industria:",
-    conversionData: "Las landing pages promedio convierten al 6.6% (datos Unbounce). Los pilotos de Dark Hammer ven tasas de conversión del 12%+.",
+    conversionData: "Creadores usando estrategias multi-canal ven 3.2x más ingresos (VidIQ 2024). Usuarios de Dark Hammer reportan crecimiento de ingresos de 4.1x.",
     privacyPolicy: "Política de Privacidad",
     termsOfService: "Términos de Servicio",
     footerCopyright: "© 2024 Dark Hammer. Hecho por creadores, para creadores.",
@@ -190,8 +310,8 @@ const translations = {
     enterNameError: "Por favor, ingresa tu nombre",
     validEmailError: "Por favor, ingresa una dirección de email válida",
     validPhoneError: "Por favor, ingresa un número de teléfono válido",
-    successMessage: "¡Martillo encendido! Te contactaremos.",
-    successDescription: "¡Bienvenido a la lista de acceso temprano de Dark Hammer!",
+    successMessage: "¡Bienvenido a la revolución!",
+    successDescription: "Ahora estás en la lista beta de Dark Hammer. Te contactaremos pronto.",
     errorMessage: "Algo salió mal. Inténtalo de nuevo."
   }
 };
