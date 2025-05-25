@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -6,6 +5,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { useTranslation } from '@/hooks/useTranslation';
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY);
 
 // Add gtag declaration
 declare global {
@@ -59,8 +61,24 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call - in real app this would go to /api/leads
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Insert the lead into Supabase
+      const { error } = await supabase
+        .from('leads')
+        .insert([
+          {
+            name: formData.name.trim(),
+            email: formData.email.toLowerCase().trim(),
+            phonenumber: formData.phone.replace(/\s/g, '')
+          }
+        ]);
+
+      if (error) {
+        if (error.code === '23505') { // Unique constraint error code
+          toast.error("This email is already on our waitlist!");
+          return;
+        }
+        throw error;
+      }
       
       // Fire GA4 event for waitlist
       if (typeof window.gtag !== 'undefined') {
@@ -70,8 +88,6 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
           value: 1
         });
       }
-
-      console.log('Waitlist lead captured:', formData);
       
       toast.success("Welcome to the waitlist!", {
         description: "You're now on the Dark Hammer beta list. We'll be in touch soon.",
@@ -86,6 +102,7 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
       }, 1000);
       
     } catch (error) {
+      console.error('Error submitting lead:', error);
       toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
