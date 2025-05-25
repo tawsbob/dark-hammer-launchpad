@@ -1,11 +1,11 @@
 
 import { Card } from '@/components/ui/card';
-import { Dashboard, Upload, Forum } from 'lucide-react';
+import { LayoutDashboard, Upload, MessageSquare } from 'lucide-react';
 
 export const FeaturesSection = () => {
   const features = [
     {
-      icon: Dashboard,
+      icon: LayoutDashboard,
       title: 'Multi-Channel Cockpit',
       description: 'Monitor all your channels from one unified dashboard. Real-time analytics, subscriber counts, and revenue tracking.',
       benefit: 'Save 3+ hours daily on channel switching'
@@ -17,7 +17,7 @@ export const FeaturesSection = () => {
       benefit: 'Never miss an upload deadline again'
     },
     {
-      icon: Forum,
+      icon: MessageSquare,
       title: 'Comment Inbox with Bulk Actions',
       description: 'Manage comments from all channels in one place. AI-powered moderation, bulk responses, and engagement tracking.',
       benefit: 'Respond 5x faster to your community'

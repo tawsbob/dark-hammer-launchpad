@@ -1,6 +1,6 @@
 
 import { Card } from '@/components/ui/card';
-import { Spark, AutoAwesomeMotion } from 'lucide-react';
+import { Sparkles, Zap } from 'lucide-react';
 
 export const ComingSoonSection = () => {
   const upcomingFeatures = [
@@ -8,7 +8,7 @@ export const ComingSoonSection = () => {
       version: 'V2',
       title: 'Creator AI Forge',
       description: 'Ideas, viral titles and studio-grade voice-over in seconds.',
-      icon: Spark,
+      icon: Sparkles,
       status: 'coming-soon',
       eta: 'Q2 2024'
     },
@@ -16,7 +16,7 @@ export const ComingSoonSection = () => {
       version: 'V3',
       title: 'AutoPilot Publishing',
       description: 'Zero-click faceless videos rendered and posted while you sleep.',
-      icon: AutoAwesomeMotion,
+      icon: Zap,
       status: 'coming-soon',
       eta: 'Q3 2024'
     }

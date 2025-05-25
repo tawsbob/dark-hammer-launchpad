@@ -1,9 +1,17 @@
+
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+
+// Add gtag declaration
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 interface LeadDialogProps {
   isOpen: boolean;
@@ -53,8 +61,8 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Fire GA4 event
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'lead_captured', {
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('event', 'lead_captured', {
           event_category: 'conversion',
           event_label: 'hero_form',
           value: 1
