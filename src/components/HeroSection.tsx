@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { LeadDialog } from './LeadDialog';
@@ -13,7 +12,7 @@ export const HeroSection = () => {
   // Animated counters for metrics
   const [metrics, setMetrics] = useState({
     channels: 1247,
-    hoursS saved: 8456,
+    hoursSaved: 8456,
     revenue: 2847392,
     creators: 892
   });
