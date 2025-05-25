@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { LeadDialog } from './LeadDialog';
@@ -39,7 +38,7 @@ export const HeroSection = () => {
         <div className="container mx-auto px-6 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <span className="text-xs text-gray-400 uppercase tracking-wide">Building</span>
+              <span className="text-xs text-gray-400 uppercase tracking-wide">{t('building')}</span>
               <div className="flex items-center space-x-1">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -70,9 +69,9 @@ export const HeroSection = () => {
           
           <div className="flex items-center space-x-6">
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
-              <a href="#stats" className="text-gray-300 hover:text-white transition-colors">Stats</a>
-              <a href="#waitlist" onClick={() => setIsDialogOpen(true)} className="text-gray-300 hover:text-white transition-colors cursor-pointer">Access</a>
+              <a href="#features" className="text-gray-300 hover:text-white transition-colors">{t('features')}</a>
+              <a href="#stats" className="text-gray-300 hover:text-white transition-colors">{t('stats')}</a>
+              <a href="#waitlist" onClick={() => setIsDialogOpen(true)} className="text-gray-300 hover:text-white transition-colors cursor-pointer">{t('access')}</a>
             </nav>
             <LanguageSelector />
             <Button 
@@ -100,7 +99,7 @@ export const HeroSection = () => {
                 {/* Beta Badge */}
                 <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-full">
                   <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2 animate-pulse"></div>
-                  <span className="text-gray-300 text-sm font-medium uppercase tracking-wide">Private Beta • App under construction</span>
+                  <span className="text-gray-300 text-sm font-medium uppercase tracking-wide">{t('privateBeta')}</span>
                 </div>
 
                 {/* Main Headline */}
@@ -122,7 +121,7 @@ export const HeroSection = () => {
                   <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4">
                     <div className="flex items-center space-x-2 mb-2">
                       <Users className="w-5 h-5 text-green-500" />
-                      <span className="text-green-400 text-sm font-medium">Active Creators</span>
+                      <span className="text-green-400 text-sm font-medium">{t('activeCreators')}</span>
                     </div>
                     <div className="text-2xl font-bold text-white">{metrics.creators.toLocaleString()} <span className="text-sm text-yellow-400">Projected*</span></div>
                   </div>
@@ -130,7 +129,7 @@ export const HeroSection = () => {
                   <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4">
                     <div className="flex items-center space-x-2 mb-2">
                       <Clock className="w-5 h-5 text-yellow-500" />
-                      <span className="text-yellow-400 text-sm font-medium">Hours Saved</span>
+                      <span className="text-yellow-400 text-sm font-medium">{t('hoursSaved')}</span>
                     </div>
                     <div className="text-2xl font-bold text-white">{metrics.hoursSaved.toLocaleString()} <span className="text-sm text-yellow-400">Projected*</span></div>
                   </div>
@@ -138,7 +137,7 @@ export const HeroSection = () => {
 
                 {/* Projected Values Disclaimer */}
                 <p className="text-xs text-gray-500">
-                  * Values based on internal pilot projections.
+                  * {t('projectedValues')}
                 </p>
 
                 {/* CTA Buttons */}
@@ -148,18 +147,18 @@ export const HeroSection = () => {
                     size="lg"
                     className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-xl shadow-red-600/25 flex items-center space-x-2"
                   >
-                    <span>Join the Waitlist</span>
+                    <span>{t('joinWaitlist')}</span>
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                   </Button>
                   
-                  <Button 
+                 {/*  <Button 
                     variant="outline"
                     size="lg"
                     className="border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2"
                   >
                     <Play className="w-5 h-5" />
                     <span>Watch Demo</span>
-                  </Button>
+                  </Button> */}
                 </div>
 
                 {/* Trust Indicators */}
@@ -184,22 +183,22 @@ export const HeroSection = () => {
                 <div className="bg-gray-900/80 border border-gray-800 rounded-2xl p-6 backdrop-blur-xl">
                   {/* Mock Dashboard Header */}
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-lg font-semibold text-white">Multi-Channel Dashboard</h3>
+                    <h3 className="text-lg font-semibold text-white">{t('multiChannelDashboard')}</h3>
                     <div className="flex items-center space-x-2">
                       <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <span className="text-sm text-green-400">Live</span>
+                      <span className="text-sm text-green-400">{t('live')}</span>
                     </div>
                   </div>
 
                   {/* Mock Stats Grid */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="bg-black/50 rounded-lg p-4">
-                      <div className="text-sm text-gray-400 mb-1">Total Channels</div>
+                      <div className="text-sm text-gray-400 mb-1">{t('totalChannels')}</div>
                       <div className="text-2xl font-bold text-white">{metrics.channels}</div>
                       <div className="text-xs text-green-400">+12% this week</div>
                     </div>
                     <div className="bg-black/50 rounded-lg p-4">
-                      <div className="text-sm text-gray-400 mb-1">Revenue</div>
+                      <div className="text-sm text-gray-400 mb-1">{t('revenue')}</div>
                       <div className="text-2xl font-bold text-white">${(metrics.revenue / 1000).toFixed(0)}K</div>
                       <div className="text-xs text-green-400">+8% this month</div>
                     </div>
@@ -230,10 +229,10 @@ export const HeroSection = () => {
 
                 {/* Floating Elements */}
                 <div className="absolute -top-4 -right-4 bg-green-500 text-black px-3 py-1 rounded-full text-sm font-bold">
-                  Live Updates
+                  {t('liveUpdates')}
                 </div>
                 <div className="absolute -bottom-4 -left-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">
-                  Real-time Sync
+                  {t('realtimeSync')}
                 </div>
               </div>
             </div>

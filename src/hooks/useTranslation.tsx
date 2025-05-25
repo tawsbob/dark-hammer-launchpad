@@ -1,4 +1,3 @@
-
 import { create } from 'zustand';
 
 type Language = 'en' | 'pt' | 'es';
@@ -112,7 +111,23 @@ const translations = {
     validPhoneError: "Please enter a valid phone number",
     successMessage: "Welcome to the revolution!",
     successDescription: "You're now on the Dark Hammer beta list. We'll be in touch soon.",
-    errorMessage: "Something went wrong. Please try again."
+    errorMessage: "Something went wrong. Please try again.",
+    
+    // Navigation & UI
+    building: "Building",
+    features: "Features",
+    stats: "Stats",
+    access: "Access",
+    privateBeta: "Private Beta • App under construction",
+    live: "Live",
+    liveUpdates: "Live Updates",
+    realtimeSync: "Real-time Sync",
+    
+    // Dashboard
+    multiChannelDashboard: "Multi-Channel Dashboard",
+    totalChannels: "Total Channels",
+    revenue: "Revenue",
+    projectedValues: "Values based on internal pilot projections.",
   },
   pt: {
     // Hero Section
@@ -212,7 +227,23 @@ const translations = {
     validPhoneError: "Por favor, digite um número de telefone válido",
     successMessage: "Bem-vindo à revolução!",
     successDescription: "Você agora está na lista beta do Dark Hammer. Entraremos em contato em breve.",
-    errorMessage: "Algo deu errado. Tente novamente."
+    errorMessage: "Algo deu errado. Tente novamente.",
+    
+    // Navigation & UI
+    building: "Construindo",
+    features: "Recursos",
+    stats: "Estatísticas",
+    access: "Acesso",
+    privateBeta: "Beta Privado • App em construção",
+    live: "Ao Vivo",
+    liveUpdates: "Atualizações ao Vivo",
+    realtimeSync: "Sincronização em Tempo Real",
+    
+    // Dashboard
+    multiChannelDashboard: "Dashboard Multi-Canal",
+    totalChannels: "Total de Canais",
+    revenue: "Receita",
+    projectedValues: "Valores baseados em projeções piloto internas.",
   },
   es: {
     // Hero Section
@@ -312,7 +343,23 @@ const translations = {
     validPhoneError: "Por favor, ingresa un número de teléfono válido",
     successMessage: "¡Bienvenido a la revolución!",
     successDescription: "Ahora estás en la lista beta de Dark Hammer. Te contactaremos pronto.",
-    errorMessage: "Algo salió mal. Inténtalo de nuevo."
+    errorMessage: "Algo salió mal. Inténtalo de nuevo.",
+    
+    // Navigation & UI
+    building: "Construyendo",
+    features: "Características",
+    stats: "Estadísticas",
+    access: "Acceso",
+    privateBeta: "Beta Privada • App en construcción",
+    live: "En Vivo",
+    liveUpdates: "Actualizaciones en Vivo",
+    realtimeSync: "Sincronización en Tiempo Real",
+    
+    // Dashboard
+    multiChannelDashboard: "Dashboard Multi-Canal",
+    totalChannels: "Total de Canales",
+    revenue: "Ingresos",
+    projectedValues: "Valores basados en proyecciones piloto internas.",
   }
 };
 
