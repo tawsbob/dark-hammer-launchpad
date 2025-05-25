@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,20 +36,23 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Material Design 3 Light Theme */
+    --md-sys-color-primary: 103 80% 40%;
+    --md-sys-color-on-primary: 0 0% 100%;
+    --md-sys-color-primary-container: 103 100% 85%;
+    --md-sys-color-on-primary-container: 103 100% 12%;
+    --md-sys-color-surface: 0 0% 99%;
+    --md-sys-color-on-surface: 103 7% 8%;
+    --md-sys-color-surface-container: 103 7% 94%;
+    --md-sys-color-surface-container-high: 103 7% 90%;
   }
 
   .dark {
@@ -87,6 +91,16 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Material Design 3 Dark Theme */
+    --md-sys-color-primary: 103 100% 75%;
+    --md-sys-color-on-primary: 103 100% 18%;
+    --md-sys-color-primary-container: 103 100% 28%;
+    --md-sys-color-on-primary-container: 103 100% 90%;
+    --md-sys-color-surface: 103 7% 8%;
+    --md-sys-color-on-surface: 103 7% 90%;
+    --md-sys-color-surface-container: 103 7% 12%;
+    --md-sys-color-surface-container-high: 103 7% 17%;
   }
 }
 
@@ -98,4 +112,19 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom Material Design 3 classes */
+.elevation-8 {
+  box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.1), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.surface-container {
+  background-color: hsl(var(--md-sys-color-surface-container));
+  color: hsl(var(--md-sys-color-on-surface));
+}
+
+.surface-container-high {
+  background-color: hsl(var(--md-sys-color-surface-container-high));
+  color: hsl(var(--md-sys-color-on-surface));
 }
