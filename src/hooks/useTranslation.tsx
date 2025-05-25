@@ -7,6 +7,8 @@ interface TranslationStore {
   setLanguage: (lang: Language) => void;
 }
 
+type TranslationKey = keyof typeof translations.en;
+
 export const useTranslationStore = create<TranslationStore>((set) => ({
   language: 'en',
   setLanguage: (lang) => set({ language: lang }),
@@ -128,6 +130,20 @@ const translations = {
     totalChannels: "Total Channels",
     revenue: "Revenue",
     projectedValues: "Values based on internal pilot projections.",
+    
+    // FAQ Section
+    faqTitle: "Frequently Asked Questions",
+    faqSubtitle: "Everything you need to know about Dark Hammer",
+    faqChannelsQuestion: "How many YouTube channels can I manage?",
+    faqChannelsAnswer: "Dark Hammer supports unlimited channels on all plans. Whether you have 2 or 20 channels, our dashboard scales with your creator empire.",
+    faqShortsQuestion: "Does it work with YouTube Shorts and long-form content?",
+    faqShortsAnswer: "Absolutely! Dark Hammer optimizes workflows for all content types - Shorts, long-form, live streams, and premieres. Our scheduler adapts to each format's best practices.",
+    faqAnalyticsQuestion: "What about analytics and revenue tracking?",
+    faqAnalyticsAnswer: "We aggregate analytics from all your channels into one unified view. Track subscribers, views, engagement, and monetization metrics without jumping between Creator Studio tabs.",
+    faqSchedulingQuestion: "Can I bulk schedule content across multiple channels?",
+    faqSchedulingAnswer: "Yes! Upload once, distribute everywhere. Our intelligent scheduler considers each channel's optimal posting times and audience preferences automatically.",
+    faqMobileQuestion: "Is there a mobile app coming?",
+    faqMobileAnswer: "Mobile app is planned for V2 launch. The web version is fully responsive and works great on mobile browsers for now.",
   },
   pt: {
     // Hero Section
@@ -244,6 +260,20 @@ const translations = {
     totalChannels: "Total de Canais",
     revenue: "Receita",
     projectedValues: "Valores baseados em projeções piloto internas.",
+    
+    // FAQ Section
+    faqTitle: "Perguntas Frequentes",
+    faqSubtitle: "Tudo que você precisa saber sobre o Dark Hammer",
+    faqChannelsQuestion: "Quantos canais do YouTube posso gerenciar?",
+    faqChannelsAnswer: "O Dark Hammer suporta canais ilimitados em todos os planos. Seja você tem 2 ou 20 canais, nosso dashboard escala com seu império de criador.",
+    faqShortsQuestion: "Funciona com YouTube Shorts e conteúdo longo?",
+    faqShortsAnswer: "Absolutamente! O Dark Hammer otimiza fluxos de trabalho para todos os tipos de conteúdo - Shorts, formato longo, lives e estreias. Nosso agendador se adapta às melhores práticas de cada formato.",
+    faqAnalyticsQuestion: "E quanto a análises e rastreamento de receita?",
+    faqAnalyticsAnswer: "Agregamos análises de todos os seus canais em uma visão unificada. Acompanhe inscritos, visualizações, engajamento e métricas de monetização sem pular entre abas do Creator Studio.",
+    faqSchedulingQuestion: "Posso agendar conteúdo em massa em vários canais?",
+    faqSchedulingAnswer: "Sim! Faça upload uma vez, distribua em todos os lugares. Nosso agendador inteligente considera os horários ideais de postagem e preferências do público de cada canal automaticamente.",
+    faqMobileQuestion: "Vai ter um aplicativo móvel?",
+    faqMobileAnswer: "O aplicativo móvel está planejado para o lançamento V2. A versão web é totalmente responsiva e funciona muito bem em navegadores móveis por enquanto.",
   },
   es: {
     // Hero Section
@@ -360,13 +390,27 @@ const translations = {
     totalChannels: "Total de Canales",
     revenue: "Ingresos",
     projectedValues: "Valores basados en proyecciones piloto internas.",
+    
+    // FAQ Section
+    faqTitle: "Preguntas Frecuentes",
+    faqSubtitle: "Todo lo que necesitas saber sobre Dark Hammer",
+    faqChannelsQuestion: "¿Cuántos canales de YouTube puedo administrar?",
+    faqChannelsAnswer: "Dark Hammer admite canales ilimitados en todos los planes. Ya sea que tengas 2 o 20 canales, nuestro dashboard escala con tu imperio de creador.",
+    faqShortsQuestion: "¿Funciona con YouTube Shorts y contenido largo?",
+    faqShortsAnswer: "¡Absolutamente! Dark Hammer optimiza flujos de trabajo para todos los tipos de contenido - Shorts, formato largo, transmisiones en vivo y estrenos. Nuestro programador se adapta a las mejores prácticas de cada formato.",
+    faqAnalyticsQuestion: "¿Qué hay de las analíticas y el seguimiento de ingresos?",
+    faqAnalyticsAnswer: "Agregamos analíticas de todos tus canales en una vista unificada. Rastrea suscriptores, vistas, engagement y métricas de monetización sin saltar entre pestañas de Creator Studio.",
+    faqSchedulingQuestion: "¿Puedo programar contenido en masa en varios canales?",
+    faqSchedulingAnswer: "¡Sí! Sube una vez, distribuye en todas partes. Nuestro programador inteligente considera automáticamente los horarios óptimos de publicación y las preferencias de la audiencia de cada canal.",
+    faqMobileQuestion: "¿Habrá una aplicación móvil?",
+    faqMobileAnswer: "La aplicación móvil está planificada para el lanzamiento V2. La versión web es totalmente responsiva y funciona muy bien en navegadores móviles por ahora.",
   }
 };
 
 export const useTranslation = () => {
   const { language } = useTranslationStore();
   
-  const t = (key: keyof typeof translations.en): string => {
+  const t = (key: TranslationKey): string => {
     return translations[language][key] || translations.en[key];
   };
   

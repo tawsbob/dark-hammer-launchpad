@@ -1,4 +1,3 @@
-
 import { Card } from '@/components/ui/card';
 import { LayoutDashboard, Upload, MessageSquare, BarChart3 } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -9,36 +8,36 @@ export const FeaturesSection = () => {
   const features = [
     {
       icon: LayoutDashboard,
-      title: "Multi-Channel Mission Control",
-      description: "Monitor all your channels from one unified dashboard. Real-time analytics, subscriber counts, and revenue tracking across unlimited channels.",
-      benefit: "Save 3+ hours daily on channel switching",
+      title: t('multiChannelCockpit'),
+      description: t('multiChannelDesc'),
+      benefit: t('multiChannelBenefit'),
       color: "text-red-500",
       bgColor: "bg-red-900/20",
       borderColor: "border-red-600/30"
     },
     {
       icon: Upload,
-      title: "Drag-and-Drop Upload & Calendar",
-      description: "Schedule content across channels with our visual calendar. Bulk upload, automatic optimization, and intelligent scheduling based on your audience data.",
-      benefit: "Never miss an upload deadline again",
+      title: t('dragDropUpload'),
+      description: t('dragDropDesc'),
+      benefit: t('dragDropBenefit'),
       color: "text-green-500",
       bgColor: "bg-green-900/20",
       borderColor: "border-green-600/30"
     },
     {
       icon: MessageSquare,
-      title: "Unified Comment Inbox",
-      description: "Manage comments from all channels in one place. AI-powered moderation, bulk responses, and engagement tracking to keep your community thriving.",
-      benefit: "Respond 5x faster to your community",
+      title: t('commentInbox'),
+      description: t('commentDesc'),
+      benefit: t('commentBenefit'),
       color: "text-yellow-500",
       bgColor: "bg-yellow-900/20",
       borderColor: "border-yellow-600/30"
     },
     {
       icon: BarChart3,
-      title: "Analytics Hub",
-      description: "Cross-channel performance insights, revenue tracking, and growth predictions. See your entire creator business at a glance.",
-      benefit: "Make data-driven decisions faster",
+      title: t('analyticsHub'),
+      description: t('analyticsDesc'),
+      benefit: t('analyticsBenefit'),
       color: "text-red-500",
       bgColor: "bg-red-900/20",
       borderColor: "border-red-600/30"
@@ -53,10 +52,10 @@ export const FeaturesSection = () => {
             <span className="text-red-300 text-sm font-medium">{t('betaFeatures')}</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            What Beta Ships Today
+            {t('whatV1Ships')}
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Stop waiting for perfection. Start streamlining your creator workflow with these battle-tested features.
+            {t('whatV1Subtitle')}
           </p>
         </div>
 
@@ -86,8 +85,8 @@ export const FeaturesSection = () => {
         {/* Roadmap / Stepper */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4">Development Roadmap</h3>
-            <p className="text-gray-400">Track our progress as we build the future of creator tools</p>
+            <h3 className="text-3xl font-bold text-white mb-4">{t('futureTitle')}</h3>
+            <p className="text-gray-400">{t('futureSubtitle')}</p>
           </div>
           
           <div className="max-w-4xl mx-auto">
@@ -98,24 +97,24 @@ export const FeaturesSection = () => {
                   <span className="text-white font-bold">✓</span>
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">Beta V1</h4>
-                <p className="text-gray-400 text-sm">Core dashboard and multi-channel management</p>
+                <p className="text-gray-400 text-sm">{t('multiChannelCockpit')}</p>
                 <div className="mt-3">
-                  <span className="inline-block bg-green-900/20 border border-green-600/30 text-green-400 px-3 py-1 rounded-full text-xs">Live Now</span>
+                  <span className="inline-block bg-green-900/20 border border-green-600/30 text-green-400 px-3 py-1 rounded-full text-xs">{t('live')}</span>
                 </div>
               </div>
 
               {/* V2 - Next */}
               <div className="text-center relative">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">Next Up</span>
+                  <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">{t('nextBatch')}</span>
                 </div>
                 <div className="bg-purple-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold">2</span>
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">V2 Release</h4>
-                <p className="text-gray-400 text-sm">Creator Automation Engine, AI tools, mobile app</p>
+                <p className="text-gray-400 text-sm">{t('creatorAIDesc')}</p>
                 <div className="mt-3">
-                  <span className="inline-block bg-purple-900/20 border border-purple-600/30 text-purple-400 px-3 py-1 rounded-full text-xs">Q2 2024</span>
+                  <span className="inline-block bg-purple-900/20 border border-purple-600/30 text-purple-400 px-3 py-1 rounded-full text-xs">{t('comingSoon')}</span>
                 </div>
               </div>
 
@@ -125,9 +124,9 @@ export const FeaturesSection = () => {
                   <span className="text-gray-400 font-bold">3</span>
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">V3 & Beyond</h4>
-                <p className="text-gray-400 text-sm">Enterprise features, team collaboration, API</p>
+                <p className="text-gray-400 text-sm">{t('autoPilotDesc')}</p>
                 <div className="mt-3">
-                  <span className="inline-block bg-gray-800 border border-gray-600 text-gray-400 px-3 py-1 rounded-full text-xs">Coming Soon</span>
+                  <span className="inline-block bg-gray-800 border border-gray-600 text-gray-400 px-3 py-1 rounded-full text-xs">{t('comingSoon')}</span>
                 </div>
               </div>
             </div>
@@ -137,20 +136,20 @@ export const FeaturesSection = () => {
         {/* Internal Target Metrics */}
         <div className="text-center">
           <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 border border-gray-700 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">Our Internal Target Metrics</h3>
-            <p className="text-gray-300 mb-6">In beta tests we aim for up to 3× faster uploads and 50% less operational time. We'll measure results together.</p>
+            <h3 className="text-2xl font-bold text-white mb-4">{t('performanceGuarantee')}</h3>
+            <p className="text-gray-300 mb-6">{t('performanceDescription')}</p>
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-3xl font-bold text-green-400 mb-2">3x</div>
-                <div className="text-gray-400 text-sm">Faster Uploads</div>
+                <div className="text-gray-400 text-sm">{t('fasterUploads')}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-yellow-400 mb-2">50%</div>
-                <div className="text-gray-400 text-sm">Less Time Spent</div>
+                <div className="text-gray-400 text-sm">{t('lessTimeSpent')}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-red-400 mb-2">24/7</div>
-                <div className="text-gray-400 text-sm">Monitoring</div>
+                <div className="text-gray-400 text-sm">{t('monitoring')}</div>
               </div>
             </div>
           </div>
