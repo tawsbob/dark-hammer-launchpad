@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import { useTranslation } from '@/hooks/useTranslation';
 
 // Add gtag declaration
 declare global {
@@ -19,6 +20,7 @@ interface LeadDialogProps {
 }
 
 export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,17 +42,17 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
     e.preventDefault();
     
     if (!formData.name.trim()) {
-      toast.error('Please enter your name');
+      toast.error(t('enterNameError'));
       return;
     }
     
     if (!validateEmail(formData.email)) {
-      toast.error('Please enter a valid email address');
+      toast.error(t('validEmailError'));
       return;
     }
     
     if (!validatePhone(formData.phone)) {
-      toast.error('Please enter a valid phone number');
+      toast.error(t('validPhoneError'));
       return;
     }
 
@@ -71,8 +73,8 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
 
       console.log('Lead captured:', formData);
       
-      toast.success('Hammer on! We\'ll be in touch.', {
-        description: 'Welcome to the Dark Hammer early access list!',
+      toast.success(t('successMessage'), {
+        description: t('successDescription'),
         duration: 4000
       });
       
@@ -84,7 +86,7 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
       }, 1000);
       
     } catch (error) {
-      toast.error('Something went wrong. Please try again.');
+      toast.error(t('errorMessage'));
     } finally {
       setIsSubmitting(false);
     }
@@ -92,58 +94,58 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md surface-container-high border-0 rounded-2xl">
+      <DialogContent className="sm:max-w-md surface-container-high border border-red-700/30 rounded-2xl">
         <DialogHeader>
-          <DialogTitle className="text-title-large text-center mb-2">
-            Join the Dark Hammer Revolution
+          <DialogTitle className="text-title-large text-center mb-2 text-white">
+            {t('joinRevolution')}
           </DialogTitle>
-          <p className="text-body-medium text-center text-muted-foreground">
-            Get early access and exclusive updates
+          <p className="text-body-medium text-center text-gray-300">
+            {t('exclusiveUpdates')}
           </p>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-label-large">Full Name</Label>
+            <Label htmlFor="name" className="text-label-large text-white">{t('fullName')}</Label>
             <Input
               id="name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              placeholder="Enter your name"
-              className="rounded-lg border-green-200 focus:border-green-500"
+              placeholder={t('enterName')}
+              className="rounded-lg border-red-700/30 bg-gray-900 text-white focus:border-red-500"
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-label-large">Email Address</Label>
+            <Label htmlFor="email" className="text-label-large text-white">{t('emailAddress')}</Label>
             <Input
               id="email"
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="your@email.com"
-              className="rounded-lg border-green-200 focus:border-green-500"
+              className="rounded-lg border-red-700/30 bg-gray-900 text-white focus:border-red-500"
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-label-large">Phone Number</Label>
+            <Label htmlFor="phone" className="text-label-large text-white">{t('phoneNumber')}</Label>
             <Input
               id="phone"
               type="tel"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               placeholder="+1 (555) 123-4567"
-              className="rounded-lg border-green-200 focus:border-green-500"
+              className="rounded-lg border-red-700/30 bg-gray-900 text-white focus:border-red-500"
             />
           </div>
 
           <Button 
             type="submit" 
             disabled={isSubmitting}
-            className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg transition-all duration-200 hover:scale-105"
+            className="w-full premium-gradient hover:opacity-90 text-white py-3 rounded-lg transition-all duration-200 hover:scale-105 tech-glow"
           >
-            {isSubmitting ? 'Joining...' : 'Get Early Access'}
+            {isSubmitting ? t('joining') : t('getEarlyAccess')}
           </Button>
         </form>
       </DialogContent>
