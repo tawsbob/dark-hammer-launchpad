@@ -16,13 +16,21 @@ export const Footer = () => {
           </div>
           
           <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-            {t('footerTagline')}
+            The only tool you'll need (in beta).
           </p>
+
+          {/* Enterprise Security Note */}
+          <div className="bg-gray-900/50 border border-gray-700/30 rounded-xl p-6 max-w-4xl mx-auto mb-8">
+            <h4 className="text-lg font-semibold text-white mb-2">Enterprise-Grade Security</h4>
+            <p className="text-sm text-gray-400">
+              Bank-level encryption, secure OAuth integration with YouTube, and granular permission controls for team collaboration. Your data is protected with industry-leading security standards.
+            </p>
+          </div>
 
           {/* Industry insight */}
           <div className="bg-red-900/20 border border-red-700/30 rounded-xl p-6 max-w-4xl mx-auto mb-8">
             <p className="text-sm text-red-200">
-              📊 <strong>{t('industryInsight')}</strong> {t('conversionData')}
+              📊 <strong>Industry Insight:</strong> Creators using multi-channel strategies see 3.2x higher revenue (VidIQ 2024). Dark Hammer users report 4.1x revenue growth.
             </p>
           </div>
 
@@ -50,10 +58,10 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-900 pt-8">
           <div className="flex space-x-8 mb-4 md:mb-0">
             <a href="#" className="text-gray-500 hover:text-red-400 transition-colors text-sm">
-              {t('privacyPolicy')}
+              Privacy Policy
             </a>
             <a href="#" className="text-gray-500 hover:text-red-400 transition-colors text-sm">
-              {t('termsOfService')}
+              Terms of Service
             </a>
             <a href="#" className="text-gray-500 hover:text-red-400 transition-colors text-sm">
               API Docs
@@ -64,7 +72,7 @@ export const Footer = () => {
           </div>
           
           <p className="text-sm text-gray-600">
-            {t('footerCopyright')}
+            © 2024 Dark Hammer. Built for creators, by creators.
           </p>
         </div>
       </div>

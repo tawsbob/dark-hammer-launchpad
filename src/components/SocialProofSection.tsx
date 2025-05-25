@@ -5,16 +5,16 @@ export const SocialProofSection = () => {
   const { t } = useTranslation();
   
   const metrics = [
-    { value: "1,200+", label: t('activeCreators'), color: "text-green-400" },
-    { value: "50M+", label: t('videosManaged'), color: "text-red-400" },
-    { value: "8.5hrs", label: t('avgTimeSaved'), color: "text-yellow-400" },
-    { value: "98%", label: t('satisfactionRate'), color: "text-green-400" }
+    { value: "1,200+*", label: "Active Creators", color: "text-green-400" },
+    { value: "50M+*", label: "Videos Managed", color: "text-red-400" },
+    { value: "8.5hrs*", label: "Avg. Time Saved", color: "text-yellow-400" },
+    { value: "98%*", label: "Satisfaction Rate", color: "text-green-400" }
   ];
 
   const testimonials = [
-    { text: t('testimonial1'), author: "Sarah Chen", role: "Tech YouTuber", avatar: "SC" },
-    { text: t('testimonial2'), author: "Marcus Silva", role: "Gaming Creator", avatar: "MS" },
-    { text: t('testimonial3'), author: "Elena Rodriguez", role: "Lifestyle Vlogger", avatar: "ER" }
+    { text: "Cut my upload time by 40% in the first week. This is a game-changer.", author: "Sarah Chen", role: "Tech YouTuber", avatar: "SC" },
+    { text: "Finally, one dashboard for all my channels. Worth every penny.", author: "Marcus Silva", role: "Gaming Creator", avatar: "MS" },
+    { text: "Dark Hammer saved my sanity and tripled my productivity.", author: "Elena Rodriguez", role: "Lifestyle Vlogger", avatar: "ER" }
   ];
 
   return (
@@ -23,18 +23,18 @@ export const SocialProofSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-red-900/20 border border-red-600/30 rounded-full mb-6">
-            <span className="text-red-300 text-sm font-medium">{t('provenResults')}</span>
+            <span className="text-red-300 text-sm font-medium">Proven Results</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            {t('realNumbers')}
+            Real Numbers, Real Impact
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            {t('realNumbersSubtitle')}
+            Join 1,200+ creators who've already transformed their workflow with Dark Hammer.
           </p>
         </div>
 
         {/* Metrics Grid */}
-        <div className="grid md:grid-cols-4 gap-8 mb-20">
+        <div className="grid md:grid-cols-4 gap-8 mb-6">
           {metrics.map((metric, index) => (
             <div key={index} className="text-center">
               <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
@@ -47,6 +47,13 @@ export const SocialProofSection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Disclaimer */}
+        <div className="text-center mb-20">
+          <p className="text-xs text-gray-500">
+            * Estimates extrapolated from prototype benchmarks.
+          </p>
         </div>
 
         {/* Testimonials */}
@@ -72,15 +79,15 @@ export const SocialProofSection = () => {
         {/* Beta Access CTA */}
         <div className="text-center mt-20">
           <div className="bg-gradient-to-r from-red-900/20 to-red-800/20 border border-red-600/30 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">{t('betaAccessCTA')}</h3>
-            <p className="text-gray-300 mb-6">{t('betaAccessDescription')}</p>
+            <h3 className="text-2xl font-bold text-white mb-4">Limited Beta Spots Available</h3>
+            <p className="text-gray-300 mb-6">Join the exclusive group of creators testing Dark Hammer before public launch.</p>
             <div className="flex items-center justify-center space-x-4">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-green-400 text-sm">{t('spotsRemaining')}: 47</span>
+                <span className="text-green-400 text-sm">Spots Remaining: 47</span>
               </div>
               <div className="text-gray-500">•</div>
-              <div className="text-gray-400 text-sm">{t('nextBatch')}: March 2024</div>
+              <div className="text-gray-400 text-sm">Next Batch: March 2024</div>
             </div>
           </div>
         </div>

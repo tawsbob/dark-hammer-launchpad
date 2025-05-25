@@ -42,39 +42,39 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
     e.preventDefault();
     
     if (!formData.name.trim()) {
-      toast.error(t('enterNameError'));
+      toast.error("Please enter your name");
       return;
     }
     
     if (!validateEmail(formData.email)) {
-      toast.error(t('validEmailError'));
+      toast.error("Please enter a valid email address");
       return;
     }
     
     if (!validatePhone(formData.phone)) {
-      toast.error(t('validPhoneError'));
+      toast.error("Please enter a valid phone number");
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      // Simulate API call - in real app this would go to Supabase
+      // Simulate API call - in real app this would go to /api/leads
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Fire GA4 event
+      // Fire GA4 event for waitlist
       if (typeof window.gtag !== 'undefined') {
-        window.gtag('event', 'lead_captured', {
+        window.gtag('event', 'lead_waitlist', {
           event_category: 'conversion',
-          event_label: 'hero_form',
+          event_label: 'waitlist_signup',
           value: 1
         });
       }
 
-      console.log('Lead captured:', formData);
+      console.log('Waitlist lead captured:', formData);
       
-      toast.success(t('successMessage'), {
-        description: t('successDescription'),
+      toast.success("Welcome to the waitlist!", {
+        description: "You're now on the Dark Hammer beta list. We'll be in touch soon.",
         duration: 4000
       });
       
@@ -86,7 +86,7 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
       }, 1000);
       
     } catch (error) {
-      toast.error(t('errorMessage'));
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -97,27 +97,27 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
       <DialogContent className="sm:max-w-md surface-container-high border border-red-700/30 rounded-2xl">
         <DialogHeader>
           <DialogTitle className="text-title-large text-center mb-2 text-white">
-            {t('joinRevolution')}
+            Join the Waitlist
           </DialogTitle>
           <p className="text-body-medium text-center text-gray-300">
-            {t('exclusiveUpdates')}
+            We're finalizing the MVP. Drop your info and get notified the moment test slots open.
           </p>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-label-large text-white">{t('fullName')}</Label>
+            <Label htmlFor="name" className="text-label-large text-white">Full Name</Label>
             <Input
               id="name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              placeholder={t('enterName')}
+              placeholder="Enter your name"
               className="rounded-lg border-red-700/30 bg-gray-900 text-white focus:border-red-500"
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-label-large text-white">{t('emailAddress')}</Label>
+            <Label htmlFor="email" className="text-label-large text-white">Email Address</Label>
             <Input
               id="email"
               type="email"
@@ -129,7 +129,7 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-label-large text-white">{t('phoneNumber')}</Label>
+            <Label htmlFor="phone" className="text-label-large text-white">Phone Number</Label>
             <Input
               id="phone"
               type="tel"
@@ -140,13 +140,19 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
             />
           </div>
 
-          <Button 
-            type="submit" 
-            disabled={isSubmitting}
-            className="w-full premium-gradient hover:opacity-90 text-white py-3 rounded-lg transition-all duration-200 hover:scale-105 tech-glow"
-          >
-            {isSubmitting ? t('joining') : t('getEarlyAccess')}
-          </Button>
+          <div className="flex items-center justify-between">
+            <Button 
+              type="submit" 
+              disabled={isSubmitting}
+              className="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-all duration-200 hover:scale-105"
+            >
+              {isSubmitting ? "Joining..." : "Join Waitlist"}
+            </Button>
+            
+            <div className="text-xs text-gray-500">
+              Privacy • We never sell your data
+            </div>
+          </div>
         </form>
       </DialogContent>
     </Dialog>

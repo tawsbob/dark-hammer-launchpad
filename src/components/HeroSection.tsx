@@ -1,9 +1,11 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { LeadDialog } from './LeadDialog';
 import { LanguageSelector } from './LanguageSelector';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Play, Users, DollarSign, Clock } from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
 
 export const HeroSection = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -32,8 +34,28 @@ export const HeroSection = () => {
 
   return (
     <>
+      {/* Sticky Progress Bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-b border-gray-800">
+        <div className="container mx-auto px-6 py-2">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <span className="text-xs text-gray-400 uppercase tracking-wide">Building</span>
+              <div className="flex items-center space-x-1">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
+                <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
+              </div>
+              <span className="text-xs text-green-400 font-medium">60%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Fixed Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-red-900/20">
+      <header className="fixed top-8 left-0 right-0 z-40 bg-black/90 backdrop-blur-xl border-b border-red-900/20">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center">
@@ -50,7 +72,7 @@ export const HeroSection = () => {
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
               <a href="#stats" className="text-gray-300 hover:text-white transition-colors">Stats</a>
-              <a href="#access" className="text-gray-300 hover:text-white transition-colors">Access</a>
+              <a href="#waitlist" onClick={() => setIsDialogOpen(true)} className="text-gray-300 hover:text-white transition-colors cursor-pointer">Access</a>
             </nav>
             <LanguageSelector />
             <Button 
@@ -64,7 +86,7 @@ export const HeroSection = () => {
       </header>
 
       {/* Hero Content - Full Screen */}
-      <section className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black relative overflow-hidden pt-24">
+      <section className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black relative overflow-hidden pt-32">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,0,0,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(255,0,0,0.05)_50%,transparent_100%)]"></div>
@@ -76,9 +98,9 @@ export const HeroSection = () => {
               {/* Left Side - Copy */}
               <div className="space-y-8">
                 {/* Beta Badge */}
-                <div className="inline-flex items-center px-4 py-2 bg-red-900/30 border border-red-600/50 rounded-full">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mr-2 animate-pulse"></div>
-                  <span className="text-red-300 text-sm font-medium">Exclusive Beta Access</span>
+                <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-full">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2 animate-pulse"></div>
+                  <span className="text-gray-300 text-sm font-medium uppercase tracking-wide">Private Beta • App under construction</span>
                 </div>
 
                 {/* Main Headline */}
@@ -102,7 +124,7 @@ export const HeroSection = () => {
                       <Users className="w-5 h-5 text-green-500" />
                       <span className="text-green-400 text-sm font-medium">Active Creators</span>
                     </div>
-                    <div className="text-2xl font-bold text-white">{metrics.creators.toLocaleString()}</div>
+                    <div className="text-2xl font-bold text-white">{metrics.creators.toLocaleString()} <span className="text-sm text-yellow-400">Projected*</span></div>
                   </div>
                   
                   <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4">
@@ -110,9 +132,14 @@ export const HeroSection = () => {
                       <Clock className="w-5 h-5 text-yellow-500" />
                       <span className="text-yellow-400 text-sm font-medium">Hours Saved</span>
                     </div>
-                    <div className="text-2xl font-bold text-white">{metrics.hoursSaved.toLocaleString()}</div>
+                    <div className="text-2xl font-bold text-white">{metrics.hoursSaved.toLocaleString()} <span className="text-sm text-yellow-400">Projected*</span></div>
                   </div>
                 </div>
+
+                {/* Projected Values Disclaimer */}
+                <p className="text-xs text-gray-500">
+                  * Values based on internal pilot projections.
+                </p>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -121,7 +148,7 @@ export const HeroSection = () => {
                     size="lg"
                     className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-xl shadow-red-600/25 flex items-center space-x-2"
                   >
-                    <span>{t('getEarlyAccess')}</span>
+                    <span>Join the Waitlist</span>
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                   </Button>
                   
