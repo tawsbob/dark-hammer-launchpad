@@ -61,7 +61,7 @@ const translations = {
     analyticsDesc: "Understand your performance across all channels. Get clear, actionable insights to grow smarter, not harder.",
     dataDecisionsFaster: "Make data-driven decisions faster",
     
-    // Coming Soon Section - Missing keys
+    // Coming Soon Section
     creatorAI: "AI Creative Tools",
     creatorAIDesc: "AI-powered content optimization, thumbnail generation, and performance predictions to boost your channel growth.",
     autoPilot: "AutoPilot",
@@ -78,7 +78,7 @@ const translations = {
     
     etapa1Desc: "Core multi-channel dashboard, unified analytics, simplified upload & scheduling. Your feedback will be key!",
     etapa2Desc: "AI-powered content optimization tools, deeper analytics, and more time-saving automations based on user needs.",
-    etapa3Desc: "The ultimate, all-in-one YouTube growth and management cockpit, continuously evolving.",
+    etapa3Desc: "The ultimate AI autopilot: automatic video generation, smart content creation, and fully autonomous posting across all channels. Set it and forget it!",
     
     comingSoon: "Coming Soon",
     inDevelopment: "In Development",
@@ -116,7 +116,18 @@ const translations = {
     beFirstExperience: "Be the First to Experience VibeTube. Get Early Access & Special Perks.",
     joinWhitelistBuild: "Join the VibeTube whitelist and help us build the ultimate YouTube cockpit.",
     whitelistOpenLimited: "Whitelist Open: Limited Spots",
-    targetLaunch: "Target Launch: Q4 2025"
+    targetLaunch: "Target Launch: Q4 2025",
+    
+    // FAQ Section
+    whitelistFAQ: "Whitelist FAQ",
+    faq1Question: "What do I get by joining the VibeTube whitelist?",
+    faq1Answer: "You'll get exclusive early access to VibeTube before public launch, special introductory pricing or perks, and the chance to provide direct feedback to shape the platform.",
+    faq2Question: "Who is VibeTube for?",
+    faq2Answer: "VibeTube is designed for any YouTube creator or manager handling multiple channels who wants to save time, get better insights, and streamline their entire workflow.",
+    faq3Question: "When will VibeTube launch?",
+    faq3Answer: "We're working hard to get VibeTube to you soon! Whitelist members will be the first to know about launch dates and get access. (We're targeting Q4 2025 for our initial release).",
+    faq4Question: "What core features can I expect at launch for whitelist users?",
+    faq4Answer: "Expect a powerful multi-channel dashboard, unified analytics, streamlined content uploading & scheduling, and integrated comment management – all designed to be your YouTube cockpit."
   },
   pt: {
     // Hero Section
@@ -165,7 +176,7 @@ const translations = {
     analyticsDesc: "Entenda o desempenho de todos os seus canais. Obtenha insights claros e acionáveis para crescer de forma mais inteligente, não mais difícil.",
     dataDecisionsFaster: "Tome decisões baseadas em dados mais rapidamente",
     
-    // Coming Soon Section - Missing keys
+    // Coming Soon Section
     creatorAI: "Ferramentas de IA Criativa",
     creatorAIDesc: "Otimização de conteúdo, geração de miniaturas e previsões de performance com IA para impulsionar o crescimento do seu canal.",
     autoPilot: "AutoPiloto",
@@ -182,7 +193,7 @@ const translations = {
     
     etapa1Desc: "Dashboard multi-canal principal, analytics unificados, upload e agendamento simplificados. Seu feedback será fundamental!",
     etapa2Desc: "Ferramentas de otimização de conteúdo com IA, analytics mais profundos e mais automações que economizam tempo baseadas nas necessidades do usuário.",
-    etapa3Desc: "O cockpit definitivo, tudo-em-um para crescimento e gerenciamento do YouTube, evoluindo continuamente.",
+    etapa3Desc: "O autopiloto definitivo com IA: geração automática de vídeos, criação inteligente de conteúdo e postagem totalmente autônoma em todos os canais. Configure e esqueça!",
     
     comingSoon: "Em Breve",
     inDevelopment: "Em Desenvolvimento",
@@ -220,7 +231,18 @@ const translations = {
     beFirstExperience: "Seja o Primeiro a Experimentar o VibeTube. Obtenha Acesso Antecipado e Vantagens Especiais.",
     joinWhitelistBuild: "Junte-se à lista de espera do VibeTube e nos ajude a construir o cockpit definitivo do YouTube.",
     whitelistOpenLimited: "Lista Aberta: Vagas Limitadas",
-    targetLaunch: "Lançamento Alvo: Q4 2025"
+    targetLaunch: "Lançamento Alvo: Q4 2025",
+    
+    // FAQ Section
+    whitelistFAQ: "FAQ da Lista de Espera",
+    faq1Question: "O que eu ganho ao me juntar à lista de espera do VibeTube?",
+    faq1Answer: "Você terá acesso antecipado exclusivo ao VibeTube antes do lançamento público, preços introdutórios especiais ou vantagens, e a chance de fornecer feedback direto para moldar a plataforma.",
+    faq2Question: "Para quem é o VibeTube?",
+    faq2Answer: "O VibeTube é projetado para qualquer criador ou gerente do YouTube que lida com múltiplos canais e quer economizar tempo, obter melhores insights e otimizar todo o seu fluxo de trabalho.",
+    faq3Question: "Quando o VibeTube será lançado?",
+    faq3Answer: "Estamos trabalhando duro para trazer o VibeTube para você em breve! Membros da lista de espera serão os primeiros a saber sobre datas de lançamento e terão acesso. (Estamos mirando Q4 2025 para nosso lançamento inicial).",
+    faq4Question: "Que funcionalidades principais posso esperar no lançamento para usuários da lista de espera?",
+    faq4Answer: "Espere um dashboard multi-canal poderoso, analytics unificados, upload e agendamento de conteúdo simplificados, e gerenciamento de comentários integrado – tudo projetado para ser seu cockpit do YouTube."
   },
   es: {
     // Hero Section
@@ -269,7 +291,7 @@ const translations = {
     analyticsDesc: "Entiende el rendimiento de todos tus canales. Obtén insights claros y accionables para crecer de manera más inteligente, no más difícil.",
     dataDecisionsFaster: "Toma decisiones basadas en datos más rápidamente",
     
-    // Coming Soon Section - Missing keys
+    // Coming Soon Section
     creatorAI: "Herramientas de IA Creativa",
     creatorAIDesc: "Optimización de contenido con IA, generación de miniaturas y predicciones de rendimiento para impulsar el crecimiento de tu canal.",
     autoPilot: "AutoPiloto",
@@ -286,7 +308,7 @@ const translations = {
     
     etapa1Desc: "Panel multi-canal principal, analytics unificados, subida y programación simplificadas. ¡Tu retroalimentación será clave!",
     etapa2Desc: "Herramientas de optimización de contenido con IA, analytics más profundos y más automatizaciones que ahorran tiempo basadas en las necesidades del usuario.",
-    etapa3Desc: "La cabina definitiva, todo-en-uno para crecimiento y gestión de YouTube, evolucionando continuamente.",
+    etapa3Desc: "El autopiloto definitivo de IA: generación automática de videos, creación inteligente de contenido y publicación totalmente autónoma en todos los canales. ¡Configúralo y olvídate!",
     
     comingSoon: "Próximamente",
     inDevelopment: "En Desarrollo",
@@ -324,7 +346,18 @@ const translations = {
     beFirstExperience: "Sé el Primero en Experimentar VibeTube. Obtén Acceso Anticipado y Ventajas Especiales.",
     joinWhitelistBuild: "Únete a la lista de espera de VibeTube y ayúdanos a construir la cabina definitiva de YouTube.",
     whitelistOpenLimited: "Lista Abierta: Plazas Limitadas",
-    targetLaunch: "Lanzamiento Objetivo: Q4 2025"
+    targetLaunch: "Lanzamiento Objetivo: Q4 2025",
+    
+    // FAQ Section
+    whitelistFAQ: "FAQ de Lista de Espera",
+    faq1Question: "¿Qué obtengo al unirme a la lista de espera de VibeTube?",
+    faq1Answer: "Obtendrás acceso anticipado exclusivo a VibeTube antes del lanzamiento público, precios introductorios especiales o ventajas, y la oportunidad de proporcionar retroalimentación directa para dar forma a la plataforma.",
+    faq2Question: "¿Para quién es VibeTube?",
+    faq2Answer: "VibeTube está diseñado para cualquier creador o gestor de YouTube que maneje múltiples canales y quiera ahorrar tiempo, obtener mejores insights y optimizar todo su flujo de trabajo.",
+    faq3Question: "¿Cuándo se lanzará VibeTube?",
+    faq3Answer: "¡Estamos trabajando duro para llevarte VibeTube pronto! Los miembros de la lista de espera serán los primeros en conocer las fechas de lanzamiento y obtener acceso. (Estamos apuntando a Q4 2025 para nuestro lanzamiento inicial).",
+    faq4Question: "¿Qué características principales puedo esperar en el lanzamiento para usuarios de la lista de espera?",
+    faq4Answer: "Espera un poderoso panel multi-canal, analytics unificados, subida y programación de contenido simplificadas, y gestión de comentarios integrada – todo diseñado para ser tu cabina de YouTube."
   }
 };
 
