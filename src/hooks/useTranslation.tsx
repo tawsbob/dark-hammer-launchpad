@@ -61,6 +61,16 @@ const translations = {
     analyticsDesc: "Understand your performance across all channels. Get clear, actionable insights to grow smarter, not harder.",
     dataDecisionsFaster: "Make data-driven decisions faster",
     
+    // Coming Soon Section - Missing keys
+    creatorAI: "AI Creative Tools",
+    creatorAIDesc: "AI-powered content optimization, thumbnail generation, and performance predictions to boost your channel growth.",
+    autoPilot: "AutoPilot",
+    autoPilotDesc: "Fully automated content scheduling, community management, and performance optimization across all your channels.",
+    futureTitle: "The Future of YouTube Management",
+    futureSubtitle: "Revolutionary features coming to transform how you manage your YouTube empire.",
+    influenceRoadmap: "Your feedback shapes our roadmap.",
+    earlyAccessPriority: "Whitelist members get priority access to new features.",
+    
     // Etapas
     developmentEtapas: "Development Etapas",
     trackProgress: "Track our progress as we build the future of creator tools",
@@ -155,6 +165,16 @@ const translations = {
     analyticsDesc: "Entenda o desempenho de todos os seus canais. Obtenha insights claros e acionáveis para crescer de forma mais inteligente, não mais difícil.",
     dataDecisionsFaster: "Tome decisões baseadas em dados mais rapidamente",
     
+    // Coming Soon Section - Missing keys
+    creatorAI: "Ferramentas de IA Criativa",
+    creatorAIDesc: "Otimização de conteúdo, geração de miniaturas e previsões de performance com IA para impulsionar o crescimento do seu canal.",
+    autoPilot: "AutoPiloto",
+    autoPilotDesc: "Agendamento totalmente automatizado de conteúdo, gerenciamento de comunidade e otimização de performance em todos os seus canais.",
+    futureTitle: "O Futuro do Gerenciamento do YouTube",
+    futureSubtitle: "Funcionalidades revolucionárias chegando para transformar como você gerencia seu império no YouTube.",
+    influenceRoadmap: "Seu feedback molda nosso roadmap.",
+    earlyAccessPriority: "Membros da lista têm acesso prioritário a novas funcionalidades.",
+    
     // Etapas
     developmentEtapas: "Etapas de Desenvolvimento",
     trackProgress: "Acompanhe nosso progresso enquanto construímos o futuro das ferramentas para criadores",
@@ -248,6 +268,16 @@ const translations = {
     analyticsHub: "Centro de Analytics",
     analyticsDesc: "Entiende el rendimiento de todos tus canales. Obtén insights claros y accionables para crecer de manera más inteligente, no más difícil.",
     dataDecisionsFaster: "Toma decisiones basadas en datos más rápidamente",
+    
+    // Coming Soon Section - Missing keys
+    creatorAI: "Herramientas de IA Creativa",
+    creatorAIDesc: "Optimización de contenido con IA, generación de miniaturas y predicciones de rendimiento para impulsar el crecimiento de tu canal.",
+    autoPilot: "AutoPiloto",
+    autoPilotDesc: "Programación completamente automatizada de contenido, gestión de comunidad y optimización de rendimiento en todos tus canales.",
+    futureTitle: "El Futuro de la Gestión de YouTube",
+    futureSubtitle: "Características revolucionarias que llegan para transformar cómo gestionas tu imperio de YouTube.",
+    influenceRoadmap: "Tu retroalimentación da forma a nuestro roadmap.",
+    earlyAccessPriority: "Los miembros de la lista obtienen acceso prioritario a nuevas características.",
     
     // Etapas
     developmentEtapas: "Etapas de Desarrollo",
