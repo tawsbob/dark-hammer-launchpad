@@ -1,4 +1,3 @@
-
 import { create } from 'zustand';
 
 type Language = 'en' | 'pt' | 'es';
@@ -396,6 +395,41 @@ const translations = {
     faq3Answer: "¡Estamos trabajando duro para llevarte VibeTube pronto! Los miembros de la lista de espera serán los primeros en conocer las fechas de lanzamiento y obtener acceso. (Estamos apuntando a Q4 2025 para nuestro lanzamiento inicial).",
     faq4Question: "¿Qué características principales puedo esperar en el lanzamiento para usuarios de la lista de espera?",
     faq4Answer: "Espera un poderoso panel multi-canal, analytics unificados, subida y programación de contenido simplificadas, y gestión de comentarios integrada – todo diseñado para ser tu cabina de YouTube.",
+    
+    // Footer
+    footerTagline: "La única herramienta que necesitarás (en beta).",
+    enterpriseSecurity: "Seguridad de Nivel Empresarial",
+    enterpriseSecurityDesc: "Encriptación de nivel bancario, integración OAuth segura con YouTube y controles de permisos granulares para colaboración en equipo. Tus datos están protegidos con estándares de seguridad líderes en la industria.",
+    industryInsight: "Insight de la Industria:",
+    industryInsightDesc: "Los creadores que usan estrategias multi-canal ven 3.2x mayores ingresos (VidIQ 2024). Los usuarios de VibeTube reportan un crecimiento de ingresos de 4.1x.",
+    betaUsers: "Usuarios Beta",
+    videosManaged: "Videos Gestionados",
+    satisfaction: "Satisfacción",
+    support: "Soporte",
+    privacyPolicy: "Política de Privacidad",
+    termsOfService: "Términos de Servicio",
+    apiDocs: "Docs de API",
+    status: "Estado",
+    footerCopyright: "Construido para creadores, por creadores."
+  },
+    // Lead Dialog specific translations
+    joinWhitelist: "Unirse a la Lista de Espera",
+    whitelistDescription: "Estamos finalizando el MVP. Deja tu información y sé notificado en el momento que abran las plazas de prueba.",
+    fullName: "Nombre Completo",
+    enterName: "Ingresa tu nombre",
+    emailAddress: "Dirección de Email",
+    emailPlaceholder: "tu@email.com",
+    phoneNumber: "Número de Teléfono",
+    phonePlaceholder: "+34 (666) 123-456",
+    joinWhitelistButton: "Unirse a la Lista",
+    joiningWhitelist: "Uniéndose...",
+    privacyNote: "Privacidad • Nunca vendemos tus datos",
+    nameRequired: "Por favor, ingresa tu nombre",
+    validEmail: "Por favor, ingresa una dirección de email válida",
+    validPhone: "Por favor, ingresa un número de teléfono válido",
+    welcomeWhitelist: "¡Bienvenido a la lista de espera!",
+    whitelistConfirmation: "Ahora estás en la lista de espera de VibeTube. Nos pondremos en contacto pronto.",
+    errorTryAgain: "Algo salió mal. Inténtalo de nuevo.",
     
     // Footer
     footerTagline: "La única herramienta que necesitarás (en beta).",
