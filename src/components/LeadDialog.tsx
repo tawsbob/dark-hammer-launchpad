@@ -73,8 +73,8 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
 
       console.log('Waitlist lead captured:', formData);
       
-      toast.success("Welcome to the waitlist!", {
-        description: "You're now on the Dark Hammer beta list. We'll be in touch soon.",
+      toast.success("Welcome to the whitelist!", {
+        description: "You're now on the VibeTube whitelist. We'll be in touch soon.",
         duration: 4000
       });
       
@@ -94,10 +94,10 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md surface-container-high border border-red-700/30 rounded-2xl">
+      <DialogContent className="sm:max-w-md surface-container-high border border-blue-700/30 rounded-2xl">
         <DialogHeader>
           <DialogTitle className="text-title-large text-center mb-2 text-white">
-            Join the Waitlist
+            Join the Whitelist
           </DialogTitle>
           <p className="text-body-medium text-center text-gray-300">
             We're finalizing the MVP. Drop your info and get notified the moment test slots open.
@@ -112,7 +112,7 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="Enter your name"
-              className="rounded-lg border-red-700/30 bg-gray-900 text-white focus:border-red-500"
+              className="rounded-lg border-blue-700/30 bg-gray-900 text-white focus:border-blue-500"
             />
           </div>
           
@@ -124,7 +124,7 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="your@email.com"
-              className="rounded-lg border-red-700/30 bg-gray-900 text-white focus:border-red-500"
+              className="rounded-lg border-blue-700/30 bg-gray-900 text-white focus:border-blue-500"
             />
           </div>
           
@@ -136,7 +136,7 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               placeholder="+1 (555) 123-4567"
-              className="rounded-lg border-red-700/30 bg-gray-900 text-white focus:border-red-500"
+              className="rounded-lg border-blue-700/30 bg-gray-900 text-white focus:border-blue-500"
             />
           </div>
 
@@ -144,9 +144,9 @@ export const LeadDialog = ({ isOpen, onClose }: LeadDialogProps) => {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-all duration-200 hover:scale-105"
+              className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg transition-all duration-200 hover:scale-105"
             >
-              {isSubmitting ? "Joining..." : "Join Waitlist"}
+              {isSubmitting ? "Joining..." : "Join Whitelist"}
             </Button>
             
             <div className="text-xs text-gray-500">

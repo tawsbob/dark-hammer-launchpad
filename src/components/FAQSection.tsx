@@ -9,24 +9,20 @@ import {
 export const FAQSection = () => {
   const faqs = [
     {
-      question: "How many YouTube channels can I manage?",
-      answer: "Dark Hammer supports unlimited channels on all plans. Whether you have 2 or 20 channels, our dashboard scales with your creator empire."
+      question: "What do I get by joining the VibeTube whitelist?",
+      answer: "You'll get exclusive early access to VibeTube before public launch, special introductory pricing or perks, and the chance to provide direct feedback to shape the platform."
     },
     {
-      question: "Does it work with YouTube Shorts and long-form content?",
-      answer: "Absolutely! Dark Hammer optimizes workflows for all content types - Shorts, long-form, live streams, and premieres. Our scheduler adapts to each format's best practices."
+      question: "Who is VibeTube for?",
+      answer: "VibeTube is designed for any YouTube creator or manager handling multiple channels who wants to save time, get better insights, and streamline their entire workflow."
     },
     {
-      question: "What about analytics and revenue tracking?",
-      answer: "We aggregate analytics from all your channels into one unified view. Track subscribers, views, engagement, and monetization metrics without jumping between Creator Studio tabs."
+      question: "When will VibeTube launch?",
+      answer: "We're working hard to get VibeTube to you soon! Whitelist members will be the first to know about launch dates and get access. (We're targeting Q4 2025 for our initial release)."
     },
     {
-      question: "Can I bulk schedule content across multiple channels?",
-      answer: "Yes! Upload once, distribute everywhere. Our intelligent scheduler considers each channel's optimal posting times and audience preferences automatically."
-    },
-    {
-      question: "Is there a mobile app coming?",
-      answer: "Mobile app is planned for V2 launch. The web version is fully responsive and works great on mobile browsers for now."
+      question: "What core features can I expect at launch for whitelist users?",
+      answer: "Expect a powerful multi-channel dashboard, unified analytics, streamlined content uploading & scheduling, and integrated comment management – all designed to be your YouTube cockpit."
     }
   ];
 
@@ -35,10 +31,10 @@ export const FAQSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-display-small font-bold text-gray-900 dark:text-white mb-4">
-            Frequently Asked Questions
+            Whitelist FAQ
           </h2>
           <p className="text-title-large text-gray-600 dark:text-gray-300">
-            Everything you need to know about Dark Hammer
+            Everything you need to know about VibeTube
           </p>
         </div>
 
@@ -50,7 +46,7 @@ export const FAQSection = () => {
                 value={`item-${index}`}
                 className="bg-white dark:bg-gray-900 rounded-lg border-0 shadow-sm px-6"
               >
-                <AccordionTrigger className="text-left text-title-medium font-semibold text-gray-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 py-6">
+                <AccordionTrigger className="text-left text-title-medium font-semibold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 py-6">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-body-medium text-gray-600 dark:text-gray-300 pb-6 leading-relaxed">

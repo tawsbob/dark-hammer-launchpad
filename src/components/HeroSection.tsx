@@ -58,10 +58,10 @@ export const HeroSection = () => {
       <header className="fixed top-8 left-0 right-0 z-40 bg-black/90 backdrop-blur-xl border-b border-red-900/20">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-xl">🔨</span>
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold text-xl">📺</span>
             </div>
-            <span className="text-2xl font-bold text-white">Dark Hammer</span>
+            <span className="text-2xl font-bold text-white">VibeTube</span>
             <div className="hidden md:flex items-center space-x-1 ml-6">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <span className="text-sm text-green-400">Live Beta</span>
@@ -71,25 +71,25 @@ export const HeroSection = () => {
           <div className="flex items-center space-x-6">
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
-              <a href="#stats" className="text-gray-300 hover:text-white transition-colors">Stats</a>
+              <a href="#stats" className="text-gray-300 hover:text-white transition-colors">Roadmap</a>
               <a href="#waitlist" onClick={() => setIsDialogOpen(true)} className="text-gray-300 hover:text-white transition-colors cursor-pointer">Access</a>
             </nav>
             <LanguageSelector />
             <Button 
               onClick={() => setIsDialogOpen(true)}
-              className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg shadow-red-600/25"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg shadow-blue-600/25"
             >
-              {t('joinWaitlist')}
+              Get Notified
             </Button>
           </div>
         </div>
       </header>
 
       {/* Hero Content - Full Screen */}
-      <section className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black relative overflow-hidden pt-32">
+      <section className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black relative overflow-hidden pt-32" id="waitlist">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,0,0,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(255,0,0,0.05)_50%,transparent_100%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(59,130,246,0.05)_50%,transparent_100%)]"></div>
         
         <div className="container mx-auto px-6 h-full flex flex-col justify-center relative z-10">
           <div className="max-w-6xl mx-auto">
@@ -106,14 +106,14 @@ export const HeroSection = () => {
                 {/* Main Headline */}
                 <div className="space-y-4">
                   <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
-                    {t('heroTitle')}<br />
-                    <span className="text-red-500 bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
-                      {t('heroTitleAccent')}
+                    Juggling Multiple YouTube Channels?<br />
+                    <span className="text-blue-500 bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
+                      Your Command Cockpit is Coming.
                     </span>
                   </h1>
                   
                   <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
-                    {t('heroSubtitle')}
+                    Stop the tab-switching chaos. VibeTube will unify your entire YouTube presence. Join the whitelist for early access.
                   </p>
                 </div>
 
@@ -122,17 +122,17 @@ export const HeroSection = () => {
                   <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4">
                     <div className="flex items-center space-x-2 mb-2">
                       <Users className="w-5 h-5 text-green-500" />
-                      <span className="text-green-400 text-sm font-medium">Active Creators</span>
+                      <span className="text-green-400 text-sm font-medium">Future Goal</span>
                     </div>
-                    <div className="text-2xl font-bold text-white">{metrics.creators.toLocaleString()} <span className="text-sm text-yellow-400">Projected*</span></div>
+                    <div className="text-2xl font-bold text-white">Powering thousands <span className="text-sm text-yellow-400">Projected*</span></div>
                   </div>
                   
                   <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4">
                     <div className="flex items-center space-x-2 mb-2">
                       <Clock className="w-5 h-5 text-yellow-500" />
-                      <span className="text-yellow-400 text-sm font-medium">Hours Saved</span>
+                      <span className="text-yellow-400 text-sm font-medium">Our Aim</span>
                     </div>
-                    <div className="text-2xl font-bold text-white">{metrics.hoursSaved.toLocaleString()} <span className="text-sm text-yellow-400">Projected*</span></div>
+                    <div className="text-2xl font-bold text-white">Save a full day weekly <span className="text-sm text-yellow-400">Projected*</span></div>
                   </div>
                 </div>
 
@@ -146,9 +146,9 @@ export const HeroSection = () => {
                   <Button 
                     onClick={() => setIsDialogOpen(true)}
                     size="lg"
-                    className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-xl shadow-red-600/25 flex items-center space-x-2"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-xl shadow-blue-600/25 flex items-center space-x-2"
                   >
-                    <span>Join the Waitlist</span>
+                    <span>Join Whitelist Now!</span>
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                   </Button>
                   
@@ -162,19 +162,24 @@ export const HeroSection = () => {
                   </Button>
                 </div>
 
+                {/* Description below CTA */}
+                <p className="text-gray-400 max-w-2xl">
+                  Get exclusive early access & help shape the future of YouTube channel management. Limited spots!
+                </p>
+
                 {/* Trust Indicators */}
                 <div className="flex items-center space-x-8 pt-8 border-t border-gray-800">
                   <div className="flex items-center space-x-2">
                     <span className="text-red-500">🔴</span>
-                    <span className="text-sm text-gray-400">{t('youtubeCertified')}</span>
+                    <span className="text-sm text-gray-400">YouTube Certified</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <span className="text-green-500">⚡</span>
-                    <span className="text-sm text-gray-400">{t('creatorFocused')}</span>
+                    <span className="text-sm text-gray-400">Creator Focused</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <span className="text-yellow-500">🚀</span>
-                    <span className="text-sm text-gray-400">{t('builtForScale')}</span>
+                    <span className="text-sm text-gray-400">Built for Scale</span>
                   </div>
                 </div>
               </div>
@@ -214,7 +219,7 @@ export const HeroSection = () => {
                     ].map((channel, index) => (
                       <div key={index} className="flex items-center justify-between p-3 bg-black/30 rounded-lg">
                         <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
+                          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                             <span className="text-white text-sm font-bold">{channel.name[0]}</span>
                           </div>
                           <div>
