@@ -185,7 +185,7 @@ export const HeroSection = () => {
                 <div className="bg-gray-900/80 border border-gray-800 rounded-2xl p-4 lg:p-6 backdrop-blur-xl">
                   {/* Mock Dashboard Header */}
                   <div className="flex items-center justify-between mb-4 lg:mb-6">
-                    <h3 className="text-base lg:text-lg font-semibold text-white">{t('multiChannelDashboard')}</h3>
+                    <h3 className="text-base lg:text-lg font-semibold text-white">{t('multiChannelDashboardPreview')}</h3>
                     <div className="flex items-center space-x-2">
                       <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                       <span className="text-sm text-red-400">Live</span>

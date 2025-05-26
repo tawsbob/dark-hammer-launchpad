@@ -37,12 +37,14 @@ const translations = {
     
     // Dashboard
     multiChannelDashboard: "Multi-Channel Dashboard",
+    multiChannelDashboardPreview: "Multi-Channel Dashboard Preview",
     totalChannels: "Total Channels",
     revenue: "Revenue",
     
     // Features
     exclusiveFirstLook: "Exclusive First Look",
-    whatVibeTubeOffers: "What's Coming in VibeTube (Exclusive First Look for Whitelist Members):",
+    whatVibeTubeOffersTitle: "What's Coming in VibeTube",
+    whatVibeTubeOffersSubtitle: "(Exclusive First Look for Whitelist Members):",
     stopWaitingPerfection: "Stop waiting for perfection. Start streamlining your creator workflow with these battle-tested features.",
     
     multiChannelMissionControl: "Multi-Channel Mission Control",
@@ -127,7 +129,23 @@ const translations = {
     faq3Question: "When will VibeTube launch?",
     faq3Answer: "We're working hard to get VibeTube to you soon! Whitelist members will be the first to know about launch dates and get access. (We're targeting Q4 2025 for our initial release).",
     faq4Question: "What core features can I expect at launch for whitelist users?",
-    faq4Answer: "Expect a powerful multi-channel dashboard, unified analytics, streamlined content uploading & scheduling, and integrated comment management – all designed to be your YouTube cockpit."
+    faq4Answer: "Expect a powerful multi-channel dashboard, unified analytics, streamlined content uploading & scheduling, and integrated comment management – all designed to be your YouTube cockpit.",
+    
+    // Footer
+    footerTagline: "The only tool you'll need (in beta).",
+    enterpriseSecurity: "Enterprise-Grade Security",
+    enterpriseSecurityDesc: "Bank-level encryption, secure OAuth integration with YouTube, and granular permission controls for team collaboration. Your data is protected with industry-leading security standards.",
+    industryInsight: "Industry Insight:",
+    industryInsightDesc: "Creators using multi-channel strategies see 3.2x higher revenue (VidIQ 2024). VibeTube users report 4.1x revenue growth.",
+    betaUsers: "Beta Users",
+    videosManaged: "Videos Managed",
+    satisfaction: "Satisfaction",
+    support: "Support",
+    privacyPolicy: "Privacy Policy",
+    termsOfService: "Terms of Service",
+    apiDocs: "API Docs",
+    status: "Status",
+    footerCopyright: "Built for creators, by creators."
   },
   pt: {
     // Hero Section
@@ -152,12 +170,14 @@ const translations = {
     
     // Dashboard
     multiChannelDashboard: "Dashboard Multi-Canal",
+    multiChannelDashboardPreview: "Prévia do Dashboard Multi-Canal",
     totalChannels: "Total de Canais",
     revenue: "Receita",
     
     // Features
     exclusiveFirstLook: "Primeira Olhada Exclusiva",
-    whatVibeTubeOffers: "O que Está Vindo no VibeTube (Primeira Olhada Exclusiva para Membros da Lista):",
+    whatVibeTubeOffersTitle: "O que Está Vindo no VibeTube",
+    whatVibeTubeOffersSubtitle: "(Primeira Olhada Exclusiva para Membros da Lista):",
     stopWaitingPerfection: "Pare de esperar a perfeição. Comece a otimizar seu fluxo de trabalho criativo com essas funcionalidades testadas em batalha.",
     
     multiChannelMissionControl: "Controle de Missão Multi-Canal",
@@ -242,7 +262,23 @@ const translations = {
     faq3Question: "Quando o VibeTube será lançado?",
     faq3Answer: "Estamos trabalhando duro para trazer o VibeTube para você em breve! Membros da lista de espera serão os primeiros a saber sobre datas de lançamento e terão acesso. (Estamos mirando Q4 2025 para nosso lançamento inicial).",
     faq4Question: "Que funcionalidades principais posso esperar no lançamento para usuários da lista de espera?",
-    faq4Answer: "Espere um dashboard multi-canal poderoso, analytics unificados, upload e agendamento de conteúdo simplificados, e gerenciamento de comentários integrado – tudo projetado para ser seu cockpit do YouTube."
+    faq4Answer: "Espere um dashboard multi-canal poderoso, analytics unificados, upload e agendamento de conteúdo simplificados, e gerenciamento de comentários integrado – tudo projetado para ser seu cockpit do YouTube.",
+    
+    // Footer
+    footerTagline: "A única ferramenta que você precisará (em beta).",
+    enterpriseSecurity: "Segurança de Nível Empresarial",
+    enterpriseSecurityDesc: "Criptografia de nível bancário, integração OAuth segura com YouTube e controles de permissão granulares para colaboração em equipe. Seus dados são protegidos com padrões de segurança líderes da indústria.",
+    industryInsight: "Insight da Indústria:",
+    industryInsightDesc: "Criadores usando estratégias multi-canal veem 3,2x maior receita (VidIQ 2024). Usuários do VibeTube relatam crescimento de receita de 4,1x.",
+    betaUsers: "Usuários Beta",
+    videosManaged: "Vídeos Gerenciados",
+    satisfaction: "Satisfação",
+    support: "Suporte",
+    privacyPolicy: "Política de Privacidade",
+    termsOfService: "Termos de Serviço",
+    apiDocs: "Docs da API",
+    status: "Status",
+    footerCopyright: "Construído para criadores, por criadores."
   },
   es: {
     // Hero Section
@@ -267,12 +303,14 @@ const translations = {
     
     // Dashboard
     multiChannelDashboard: "Panel Multi-Canal",
+    multiChannelDashboardPreview: "Vista Previa del Panel Multi-Canal",
     totalChannels: "Total de Canales",
     revenue: "Ingresos",
     
     // Features
     exclusiveFirstLook: "Primera Mirada Exclusiva",
-    whatVibeTubeOffers: "Lo que Viene en VibeTube (Primera Mirada Exclusiva para Miembros de la Lista):",
+    whatVibeTubeOffersTitle: "Lo que Viene en VibeTube",
+    whatVibeTubeOffersSubtitle: "(Primera Mirada Exclusiva para Miembros de la Lista):",
     stopWaitingPerfection: "Deja de esperar la perfección. Comienza a optimizar tu flujo de trabajo creativo con estas características probadas en batalla.",
     
     multiChannelMissionControl: "Control de Misión Multi-Canal",
@@ -357,7 +395,23 @@ const translations = {
     faq3Question: "¿Cuándo se lanzará VibeTube?",
     faq3Answer: "¡Estamos trabajando duro para llevarte VibeTube pronto! Los miembros de la lista de espera serán los primeros en conocer las fechas de lanzamiento y obtener acceso. (Estamos apuntando a Q4 2025 para nuestro lanzamiento inicial).",
     faq4Question: "¿Qué características principales puedo esperar en el lanzamiento para usuarios de la lista de espera?",
-    faq4Answer: "Espera un poderoso panel multi-canal, analytics unificados, subida y programación de contenido simplificadas, y gestión de comentarios integrada – todo diseñado para ser tu cabina de YouTube."
+    faq4Answer: "Espera un poderoso panel multi-canal, analytics unificados, subida y programación de contenido simplificadas, y gestión de comentarios integrada – todo diseñado para ser tu cabina de YouTube.",
+    
+    // Footer
+    footerTagline: "La única herramienta que necesitarás (en beta).",
+    enterpriseSecurity: "Seguridad de Nivel Empresarial",
+    enterpriseSecurityDesc: "Encriptación de nivel bancario, integración OAuth segura con YouTube y controles de permisos granulares para colaboración en equipo. Tus datos están protegidos con estándares de seguridad líderes en la industria.",
+    industryInsight: "Insight de la Industria:",
+    industryInsightDesc: "Los creadores que usan estrategias multi-canal ven 3.2x mayores ingresos (VidIQ 2024). Los usuarios de VibeTube reportan un crecimiento de ingresos de 4.1x.",
+    betaUsers: "Usuarios Beta",
+    videosManaged: "Videos Gestionados",
+    satisfaction: "Satisfacción",
+    support: "Soporte",
+    privacyPolicy: "Política de Privacidad",
+    termsOfService: "Términos de Servicio",
+    apiDocs: "Docs de API",
+    status: "Estado",
+    footerCopyright: "Construido para creadores, por creadores."
   }
 };
 

@@ -77,7 +77,8 @@ export const FeaturesSection = () => {
             <span className="text-red-300 text-sm font-medium">{t('exclusiveFirstLook')}</span>
           </div>
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
-            {t('whatVibeTubeOffers')}
+            {t('whatVibeTubeOffersTitle')}<br />
+            <span className="text-2xl lg:text-3xl text-gray-400">{t('whatVibeTubeOffersSubtitle')}</span>
           </h2>
           <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto">
             {t('stopWaitingPerfection')}
@@ -154,9 +155,6 @@ export const FeaturesSection = () => {
                 </div>
               ))}
             </div>
-            
-            {/* Connection lines between etapas */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-red-500 via-blue-500 to-gray-500 opacity-30 transform -translate-y-1/2"></div>
           </div>
         </div>
 
