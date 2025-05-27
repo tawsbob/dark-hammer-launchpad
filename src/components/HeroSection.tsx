@@ -4,7 +4,14 @@ import { Button } from '@/components/ui/button';
 import { LeadDialog } from './LeadDialog';
 import { LanguageSelector } from './LanguageSelector';
 import { useTranslation } from '@/hooks/useTranslation';
-import { Users, DollarSign, Clock } from 'lucide-react';
+import { Users, DollarSign, Clock, Eye, UserPlus, Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export const HeroSection = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -30,6 +37,54 @@ export const HeroSection = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Mock data for carousel previews
+  const channelPreviews = [
+    {
+      id: 1,
+      name: "Tech Reviews Pro",
+      subscribers: "847K",
+      views: "2.4M",
+      watchTime: "1,247",
+      revenue: "$12.4K",
+      trend: "+12%",
+      avatar: "T",
+      color: "bg-blue-600"
+    },
+    {
+      id: 2,
+      name: "Gaming Central",
+      subscribers: "1.2M",
+      views: "5.8M",
+      watchTime: "2,156",
+      revenue: "$18.7K",
+      trend: "+8%",
+      avatar: "G",
+      color: "bg-purple-600"
+    },
+    {
+      id: 3,
+      name: "Lifestyle Vlogs",
+      subscribers: "634K",
+      views: "1.9M",
+      watchTime: "987",
+      revenue: "$9.2K",
+      trend: "+15%",
+      avatar: "L",
+      color: "bg-pink-600"
+    },
+    {
+      id: 4,
+      name: "Cooking Master",
+      subscribers: "923K",
+      views: "3.2M",
+      watchTime: "1,543",
+      revenue: "$14.1K",
+      trend: "+6%",
+      avatar: "C",
+      color: "bg-orange-600"
+    }
+  ];
 
   return (
     <>
@@ -93,7 +148,7 @@ export const HeroSection = () => {
         <div className="container mx-auto px-4 lg:px-6 h-full flex flex-col justify-center relative z-10">
           <div className="max-w-7xl mx-auto w-full">
             {/* Main Content Grid */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               {/* Left Side - Copy */}
               <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
                 {/* Beta Badge */}
@@ -180,60 +235,109 @@ export const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Right Side - Dashboard Preview */}
-              <div className="relative mt-8 lg:mt-0">
-                <div className="bg-gray-900/80 border border-gray-800 rounded-2xl p-4 lg:p-6 backdrop-blur-xl">
-                  {/* Mock Dashboard Header */}
-                  <div className="flex items-center justify-between mb-4 lg:mb-6">
-                    <h3 className="text-base lg:text-lg font-semibold text-white">{t('multiChannelDashboardPreview')}</h3>
+              {/* Right Side - Enhanced Dashboard Preview Carousel */}
+              <div className="relative mt-0 lg:mt-0">
+                <div className="bg-gray-900/80 border border-gray-800 rounded-2xl p-6 backdrop-blur-xl">
+                  {/* Dashboard Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-lg font-semibold text-white">{t('multiChannelDashboardPreview')}</h3>
                     <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
                       <span className="text-sm text-red-400">Live</span>
                     </div>
                   </div>
 
-                  {/* Mock Stats Grid */}
-                  <div className="grid grid-cols-2 gap-3 lg:gap-4 mb-4 lg:mb-6">
-                    <div className="bg-black/50 rounded-lg p-3 lg:p-4">
-                      <div className="text-xs lg:text-sm text-gray-400 mb-1">{t('totalChannels')}</div>
-                      <div className="text-lg lg:text-2xl font-bold text-white">{metrics.channels}</div>
-                      <div className="text-xs text-red-400">+12% this week</div>
-                    </div>
-                    <div className="bg-black/50 rounded-lg p-3 lg:p-4">
-                      <div className="text-xs lg:text-sm text-gray-400 mb-1">{t('revenue')}</div>
-                      <div className="text-lg lg:text-2xl font-bold text-white">${(metrics.revenue / 1000).toFixed(0)}K</div>
-                      <div className="text-xs text-red-400">+8% this month</div>
-                    </div>
-                  </div>
+                  {/* Carousel */}
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {channelPreviews.map((channel, index) => (
+                        <CarouselItem key={channel.id}>
+                          <div className="space-y-4">
+                            {/* Channel Header */}
+                            <div className="flex items-center space-x-3 mb-4">
+                              <div className={`w-12 h-12 ${channel.color} rounded-xl flex items-center justify-center`}>
+                                <span className="text-white font-bold text-lg">{channel.avatar}</span>
+                              </div>
+                              <div>
+                                <h4 className="text-white font-semibold">{channel.name}</h4>
+                                <p className="text-gray-400 text-sm">{channel.subscribers} subscribers</p>
+                              </div>
+                              <div className="ml-auto">
+                                <span className="text-green-400 text-sm font-medium">{channel.trend}</span>
+                              </div>
+                            </div>
 
-                  {/* Mock Channel List */}
-                  <div className="space-y-2 lg:space-y-3">
-                    {[
-                      { name: "Tech Reviews Pro", subs: "847K", revenue: "$12.4K" },
-                      { name: "Gaming Central", subs: "1.2M", revenue: "$18.7K" },
-                      { name: "Lifestyle Vlogs", subs: "634K", revenue: "$9.2K" }
-                    ].map((channel, index) => (
-                      <div key={index} className="flex items-center justify-between p-2 lg:p-3 bg-black/30 rounded-lg">
-                        <div className="flex items-center space-x-2 lg:space-x-3">
-                          <div className="w-6 h-6 lg:w-8 lg:h-8 bg-red-600 rounded-lg flex items-center justify-center">
-                            <span className="text-white text-xs lg:text-sm font-bold">{channel.name[0]}</span>
+                            {/* Metrics Grid */}
+                            <div className="grid grid-cols-2 gap-3">
+                              {/* Views */}
+                              <div className="bg-black/50 rounded-lg p-4">
+                                <div className="flex items-center space-x-2 mb-2">
+                                  <Eye className="w-4 h-4 text-blue-400" />
+                                  <span className="text-gray-400 text-sm">Views</span>
+                                </div>
+                                <div className="text-xl font-bold text-white">{channel.views}</div>
+                                <div className="text-xs text-green-400">+{Math.floor(Math.random() * 20)}% this week</div>
+                              </div>
+
+                              {/* Revenue */}
+                              <div className="bg-black/50 rounded-lg p-4">
+                                <div className="flex items-center space-x-2 mb-2">
+                                  <DollarSign className="w-4 h-4 text-green-400" />
+                                  <span className="text-gray-400 text-sm">Revenue</span>
+                                </div>
+                                <div className="text-xl font-bold text-white">{channel.revenue}</div>
+                                <div className="text-xs text-green-400">+{Math.floor(Math.random() * 15)}% this month</div>
+                              </div>
+
+                              {/* Watch Time */}
+                              <div className="bg-black/50 rounded-lg p-4">
+                                <div className="flex items-center space-x-2 mb-2">
+                                  <Play className="w-4 h-4 text-purple-400" />
+                                  <span className="text-gray-400 text-sm">Watch Time</span>
+                                </div>
+                                <div className="text-xl font-bold text-white">{channel.watchTime}h</div>
+                                <div className="text-xs text-purple-400">+{Math.floor(Math.random() * 10)}% avg</div>
+                              </div>
+
+                              {/* Subscribers */}
+                              <div className="bg-black/50 rounded-lg p-4">
+                                <div className="flex items-center space-x-2 mb-2">
+                                  <UserPlus className="w-4 h-4 text-red-400" />
+                                  <span className="text-gray-400 text-sm">Subscribers</span>
+                                </div>
+                                <div className="text-xl font-bold text-white">{channel.subscribers}</div>
+                                <div className="text-xs text-red-400">+{Math.floor(Math.random() * 8)}% growth</div>
+                              </div>
+                            </div>
+
+                            {/* Performance Indicator */}
+                            <div className="mt-4 p-3 bg-gradient-to-r from-red-500/20 to-red-600/20 border border-red-500/30 rounded-lg">
+                              <div className="flex items-center justify-between">
+                                <span className="text-red-400 text-sm font-medium">Channel Performance</span>
+                                <span className="text-white font-bold">Excellent ⭐</span>
+                              </div>
+                            </div>
                           </div>
-                          <div>
-                            <div className="text-xs lg:text-sm font-medium text-white">{channel.name}</div>
-                            <div className="text-xs text-gray-400">{channel.subs} subscribers</div>
-                          </div>
-                        </div>
-                        <div className="text-xs lg:text-sm font-semibold text-red-400">{channel.revenue}</div>
-                      </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-2 bg-gray-800/80 border-gray-700 hover:bg-gray-700/80" />
+                    <CarouselNext className="right-2 bg-gray-800/80 border-gray-700 hover:bg-gray-700/80" />
+                  </Carousel>
+
+                  {/* Carousel Indicators */}
+                  <div className="flex justify-center space-x-2 mt-4">
+                    {channelPreviews.map((_, index) => (
+                      <div key={index} className="w-2 h-2 bg-gray-600 rounded-full"></div>
                     ))}
                   </div>
                 </div>
 
                 {/* Floating Elements */}
-                <div className="absolute -top-2 lg:-top-4 -right-2 lg:-right-4 bg-red-500 text-white px-2 lg:px-3 py-1 rounded-full text-xs lg:text-sm font-bold">
+                <div className="absolute -top-4 -right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">
                   Live Updates
                 </div>
-                <div className="absolute -bottom-2 lg:-bottom-4 -left-2 lg:-left-4 bg-yellow-500 text-black px-2 lg:px-3 py-1 rounded-full text-xs lg:text-sm font-bold">
+                <div className="absolute -bottom-4 -left-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">
                   Real-time Sync
                 </div>
               </div>
