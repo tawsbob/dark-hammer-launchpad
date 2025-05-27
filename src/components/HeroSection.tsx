@@ -5,17 +5,14 @@ import { LeadDialog } from './LeadDialog';
 import { LanguageSelector } from './LanguageSelector';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Users, DollarSign, Clock, Eye, UserPlus, Play, ChevronLeft, ChevronRight } from 'lucide-react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export const HeroSection = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { t } = useTranslation();
+  
+  // Carousel state
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
   
   // Animated counters for metrics
   const [metrics, setMetrics] = useState({
@@ -38,53 +35,102 @@ export const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Mock data for carousel previews
+  // Enhanced channel data with realistic faceless brand names
   const channelPreviews = [
     {
       id: 1,
-      name: "Tech Reviews Pro",
+      name: "MysteryTech Reviews",
       subscribers: "847K",
       views: "2.4M",
       watchTime: "1,247",
       revenue: "$12.4K",
       trend: "+12%",
-      avatar: "T",
+      avatar: "MT",
       color: "bg-blue-600"
     },
     {
       id: 2,
-      name: "Gaming Central",
+      name: "GhostGaming Central",
       subscribers: "1.2M",
       views: "5.8M",
       watchTime: "2,156",
       revenue: "$18.7K",
       trend: "+8%",
-      avatar: "G",
+      avatar: "GG",
       color: "bg-purple-600"
     },
     {
       id: 3,
-      name: "Lifestyle Vlogs",
+      name: "SilentFinance Tips",
       subscribers: "634K",
       views: "1.9M",
       watchTime: "987",
       revenue: "$9.2K",
       trend: "+15%",
-      avatar: "L",
-      color: "bg-pink-600"
+      avatar: "SF",
+      color: "bg-green-600"
     },
     {
       id: 4,
-      name: "Cooking Master",
+      name: "HiddenHealth Hacks",
       subscribers: "923K",
       views: "3.2M",
       watchTime: "1,543",
       revenue: "$14.1K",
       trend: "+6%",
-      avatar: "C",
+      avatar: "HH",
       color: "bg-orange-600"
+    },
+    {
+      id: 5,
+      name: "UndercoverDIY",
+      subscribers: "756K",
+      views: "2.7M",
+      watchTime: "1,324",
+      revenue: "$11.8K",
+      trend: "+9%",
+      avatar: "UD",
+      color: "bg-pink-600"
     }
   ];
+
+  // Auto-rotation effect
+  useEffect(() => {
+    if (!isHovering) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % channelPreviews.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [isHovering, channelPreviews.length]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        setCurrentSlide((prev) => (prev - 1 + channelPreviews.length) % channelPreviews.length);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        setCurrentSlide((prev) => (prev + 1) % channelPreviews.length);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [channelPreviews.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % channelPreviews.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + channelPreviews.length) % channelPreviews.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
 
   return (
     <>
@@ -237,7 +283,11 @@ export const HeroSection = () => {
 
               {/* Right Side - Enhanced Dashboard Preview Carousel */}
               <div className="relative mt-0 lg:mt-0">
-                <div className="bg-gray-900/80 border border-gray-800 rounded-2xl p-6 backdrop-blur-xl">
+                <div 
+                  className="bg-gray-900/80 border border-gray-800 rounded-2xl p-6 backdrop-blur-xl relative"
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                >
                   {/* Dashboard Header */}
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-lg font-semibold text-white">{t('multiChannelDashboardPreview')}</h3>
@@ -247,15 +297,18 @@ export const HeroSection = () => {
                     </div>
                   </div>
 
-                  {/* Carousel */}
-                  <Carousel className="w-full">
-                    <CarouselContent>
-                      {channelPreviews.map((channel, index) => (
-                        <CarouselItem key={channel.id}>
+                  {/* Carousel Container */}
+                  <div className="relative overflow-hidden">
+                    <div 
+                      className="flex transition-transform duration-500 ease-in-out"
+                      style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                    >
+                      {channelPreviews.map((channel) => (
+                        <div key={channel.id} className="w-full flex-shrink-0">
                           <div className="space-y-4">
                             {/* Channel Header */}
                             <div className="flex items-center space-x-3 mb-4">
-                              <div className={`w-12 h-12 ${channel.color} rounded-xl flex items-center justify-center`}>
+                              <div className={`w-12 h-12 ${channel.color} rounded-full flex items-center justify-center`}>
                                 <span className="text-white font-bold text-lg">{channel.avatar}</span>
                               </div>
                               <div>
@@ -318,28 +371,55 @@ export const HeroSection = () => {
                               </div>
                             </div>
                           </div>
-                        </CarouselItem>
+                        </div>
                       ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="left-2 bg-gray-800/80 border-gray-700 hover:bg-gray-700/80" />
-                    <CarouselNext className="right-2 bg-gray-800/80 border-gray-700 hover:bg-gray-700/80" />
-                  </Carousel>
+                    </div>
+                  </div>
 
-                  {/* Carousel Indicators */}
-                  <div className="flex justify-center space-x-2 mt-4">
+                  {/* Pagination Dots */}
+                  <div className="flex justify-center space-x-2 mt-6">
                     {channelPreviews.map((_, index) => (
-                      <div key={index} className="w-2 h-2 bg-gray-600 rounded-full"></div>
+                      <button
+                        key={index}
+                        onClick={() => goToSlide(index)}
+                        onKeyDown={(e) => e.key === 'Enter' && goToSlide(index)}
+                        className={`w-2 h-2 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900 ${
+                          index === currentSlide ? 'bg-red-500' : 'bg-gray-600 hover:bg-gray-500'
+                        }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                        tabIndex={0}
+                      />
                     ))}
+                  </div>
+
+                  {/* Floating Elements */}
+                  <div className="absolute -top-4 -right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">
+                    Live Updates
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">
+                    Real-time Sync
                   </div>
                 </div>
 
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">
-                  Live Updates
-                </div>
-                <div className="absolute -bottom-4 -left-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">
-                  Real-time Sync
-                </div>
+                {/* External Navigation Arrows */}
+                {isHovering && (
+                  <>
+                    <button
+                      onClick={prevSlide}
+                      className="absolute left-[-60px] top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-800/80 hover:bg-gray-700/90 border border-gray-600 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label="Previous channel"
+                    >
+                      <ChevronLeft className="w-6 h-6 text-white" />
+                    </button>
+                    <button
+                      onClick={nextSlide}
+                      className="absolute right-[-60px] top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-800/80 hover:bg-gray-700/90 border border-gray-600 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label="Next channel"
+                    >
+                      <ChevronRight className="w-6 h-6 text-white" />
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           </div>
