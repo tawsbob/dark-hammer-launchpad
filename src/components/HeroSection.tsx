@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { LeadDialog } from './LeadDialog';
 import { LanguageSelector } from './LanguageSelector';
 import { useTranslation } from '@/hooks/useTranslation';
-import { Users, DollarSign, Clock, Eye, UserPlus, Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Users, DollarSign, Clock, Eye, UserPlus, Play, ChevronLeft, ChevronRight, TrendingUp, BarChart3, Target } from 'lucide-react';
 
 export const HeroSection = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -37,6 +37,18 @@ export const HeroSection = () => {
 
   // Enhanced channel data with realistic faceless brand names
   const channelPreviews = [
+    {
+      id: 0,
+      name: "Unified Dashboard",
+      type: "summary",
+      totalSubscribers: "4.1M",
+      totalViews: "14.1M",
+      totalWatchTime: "6,257",
+      totalRevenue: "$65.2K",
+      channels: 4,
+      avatar: "📊",
+      color: "bg-gradient-to-br from-red-600 to-red-700"
+    },
     {
       id: 1,
       name: "MysteryTech Reviews",
@@ -132,6 +144,145 @@ export const HeroSection = () => {
     setCurrentSlide(index);
   };
 
+  const renderSummaryView = () => (
+    <div className="space-y-4">
+      {/* Summary Header */}
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-700 rounded-full flex items-center justify-center">
+          <span className="text-white font-bold text-lg">📊</span>
+        </div>
+        <div>
+          <h4 className="text-white font-semibold">Unified Dashboard</h4>
+          <p className="text-gray-400 text-sm">All 4 channels combined</p>
+        </div>
+        <div className="ml-auto">
+          <span className="text-green-400 text-sm font-medium">+11% overall</span>
+        </div>
+      </div>
+
+      {/* Combined Metrics Grid */}
+      <div className="grid grid-cols-2 gap-3">
+        {/* Total Views */}
+        <div className="bg-black/50 rounded-lg p-4">
+          <div className="flex items-center space-x-2 mb-2">
+            <Eye className="w-4 h-4 text-blue-400" />
+            <span className="text-gray-400 text-sm">Total Views</span>
+          </div>
+          <div className="text-xl font-bold text-white">14.1M</div>
+          <div className="text-xs text-blue-400">+12% this month</div>
+        </div>
+
+        {/* Total Revenue */}
+        <div className="bg-black/50 rounded-lg p-4">
+          <div className="flex items-center space-x-2 mb-2">
+            <DollarSign className="w-4 h-4 text-green-400" />
+            <span className="text-gray-400 text-sm">Total Revenue</span>
+          </div>
+          <div className="text-xl font-bold text-white">$65.2K</div>
+          <div className="text-xs text-green-400">+15% this month</div>
+        </div>
+
+        {/* Total Watch Time */}
+        <div className="bg-black/50 rounded-lg p-4">
+          <div className="flex items-center space-x-2 mb-2">
+            <Play className="w-4 h-4 text-purple-400" />
+            <span className="text-gray-400 text-sm">Total Watch Time</span>
+          </div>
+          <div className="text-xl font-bold text-white">6,257h</div>
+          <div className="text-xs text-purple-400">+8% avg</div>
+        </div>
+
+        {/* Total Subscribers */}
+        <div className="bg-black/50 rounded-lg p-4">
+          <div className="flex items-center space-x-2 mb-2">
+            <UserPlus className="w-4 h-4 text-red-400" />
+            <span className="text-gray-400 text-sm">Total Subscribers</span>
+          </div>
+          <div className="text-xl font-bold text-white">4.1M</div>
+          <div className="text-xs text-red-400">+9% growth</div>
+        </div>
+      </div>
+
+      {/* Channels Overview */}
+      <div className="mt-4 p-3 bg-gradient-to-r from-red-500/20 to-red-600/20 border border-red-500/30 rounded-lg">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-red-400 text-sm font-medium">Network Performance</span>
+          <span className="text-white font-bold">Excellent ⭐</span>
+        </div>
+        <div className="text-xs text-gray-400">Managing 4 active channels</div>
+      </div>
+    </div>
+  );
+
+  const renderChannelView = (channel: any) => (
+    <div className="space-y-4">
+      {/* Channel Header */}
+      <div className="flex items-center space-x-3 mb-4">
+        <div className={`w-12 h-12 ${channel.color} rounded-full flex items-center justify-center`}>
+          <span className="text-white font-bold text-lg">{channel.avatar}</span>
+        </div>
+        <div>
+          <h4 className="text-white font-semibold">{channel.name}</h4>
+          <p className="text-gray-400 text-sm">{channel.subscribers} subscribers</p>
+        </div>
+        <div className="ml-auto">
+          <span className="text-green-400 text-sm font-medium">{channel.trend}</span>
+        </div>
+      </div>
+
+      {/* Metrics Grid */}
+      <div className="grid grid-cols-2 gap-3">
+        {/* Views */}
+        <div className="bg-black/50 rounded-lg p-4">
+          <div className="flex items-center space-x-2 mb-2">
+            <Eye className="w-4 h-4 text-blue-400" />
+            <span className="text-gray-400 text-sm">Views</span>
+          </div>
+          <div className="text-xl font-bold text-white">{channel.views}</div>
+          <div className="text-xs text-green-400">+{Math.floor(Math.random() * 20)}% this week</div>
+        </div>
+
+        {/* Revenue */}
+        <div className="bg-black/50 rounded-lg p-4">
+          <div className="flex items-center space-x-2 mb-2">
+            <DollarSign className="w-4 h-4 text-green-400" />
+            <span className="text-gray-400 text-sm">Revenue</span>
+          </div>
+          <div className="text-xl font-bold text-white">{channel.revenue}</div>
+          <div className="text-xs text-green-400">+{Math.floor(Math.random() * 15)}% this month</div>
+        </div>
+
+        {/* Watch Time */}
+        <div className="bg-black/50 rounded-lg p-4">
+          <div className="flex items-center space-x-2 mb-2">
+            <Play className="w-4 h-4 text-purple-400" />
+            <span className="text-gray-400 text-sm">Watch Time</span>
+          </div>
+          <div className="text-xl font-bold text-white">{channel.watchTime}h</div>
+          <div className="text-xs text-purple-400">+{Math.floor(Math.random() * 10)}% avg</div>
+        </div>
+
+        {/* Subscribers */}
+        <div className="bg-black/50 rounded-lg p-4">
+          <div className="flex items-center space-x-2 mb-2">
+            <UserPlus className="w-4 h-4 text-red-400" />
+            <span className="text-gray-400 text-sm">Subscribers</span>
+          </div>
+          <div className="text-xl font-bold text-white">{channel.subscribers}</div>
+          <div className="text-xs text-red-400">+{Math.floor(Math.random() * 8)}% growth</div>
+        </div>
+      </div>
+
+      {/* Performance Indicator */}
+      <div className="mt-4 p-3 bg-gradient-to-r from-red-500/20 to-red-600/20 border border-red-500/30 rounded-lg">
+        <div className="flex items-center justify-between">
+          <span className="text-red-400 text-sm font-medium">Channel Performance</span>
+          <span className="text-white font-bold">Excellent ⭐</span>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <>
       {/* Sticky Progress Bar */}
@@ -201,26 +352,41 @@ export const HeroSection = () => {
                 <span className="text-gray-300 text-sm font-medium uppercase tracking-wide">{t('privateBeta')}</span>
               </div>
 
-              {/* Main Headline */}
-              <div className="space-y-4 lg:space-y-6 mb-8">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+              {/* Main Headline - Reduced sizes */}
+              <div className="space-y-3 lg:space-y-4 mb-6">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
                   <span className="block mb-2">{t('heroTitle')}</span>
                   <span className="text-red-500 bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
                     {t('heroTitleAccent')}
                   </span>
                 </h1>
                 
-                <p className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-base lg:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
                   {t('heroSubtitle')}
+                </p>
+              </div>
+
+              {/* CTA Button - Moved up */}
+              <div className="mb-8">
+                <Button 
+                  onClick={() => setIsDialogOpen(true)}
+                  size="lg"
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-xl shadow-red-600/25 flex items-center justify-center space-x-2"
+                >
+                  <span>{t('joinWhitelistNow')}</span>
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                </Button>
+                <p className="text-gray-400 text-sm lg:text-base mt-3">
+                  {t('exclusiveEarlyAccess')}
                 </p>
               </div>
             </div>
 
             {/* Two Column Layout - Metrics Left, Dashboard Right */}
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-              {/* Left Side - Metrics and CTA */}
+              {/* Left Side - Metrics (3 cards now) */}
               <div className="space-y-6 lg:space-y-8">
-                {/* Performance Stats */}
+                {/* Performance Stats - 3 cards */}
                 <div className="grid grid-cols-1 gap-4 lg:gap-6">
                   <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4 lg:p-6">
                     <div className="flex items-center space-x-2 mb-2">
@@ -243,45 +409,23 @@ export const HeroSection = () => {
                       <span className="block text-xs lg:text-sm text-yellow-400 mt-1">{t('projected')}</span>
                     </div>
                   </div>
+
+                  <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4 lg:p-6">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <Target className="w-5 h-5 text-blue-500" />
+                      <span className="text-blue-400 text-sm font-medium">Vision</span>
+                    </div>
+                    <div className="text-xl lg:text-2xl font-bold text-white">
+                      Universal Control Hub
+                      <span className="block text-xs lg:text-sm text-yellow-400 mt-1">{t('projected')}</span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Projected Values Disclaimer */}
                 <p className="text-xs text-gray-500">
                   {t('projectedDisclaimer')}
                 </p>
-
-                {/* CTA Button - Larger */}
-                <div className="flex flex-col gap-4">
-                  <Button 
-                    onClick={() => setIsDialogOpen(true)}
-                    size="lg"
-                    className="bg-red-600 hover:bg-red-700 text-white px-8 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-xl shadow-red-600/25 flex items-center justify-center space-x-2"
-                  >
-                    <span>{t('joinWhitelistNow')}</span>
-                    <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                  </Button>
-                </div>
-
-                {/* Description below CTA */}
-                <p className="text-gray-400 text-sm lg:text-base">
-                  {t('exclusiveEarlyAccess')}
-                </p>
-
-                {/* Trust Indicators */}
-                <div className="flex flex-wrap items-center gap-4 lg:gap-6 pt-6 lg:pt-8 border-t border-gray-800">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-red-500">🔴</span>
-                    <span className="text-xs lg:text-sm text-gray-400">{t('youtubeCertified')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-green-500">⚡</span>
-                    <span className="text-xs lg:text-sm text-gray-400">{t('creatorFocused')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-yellow-500">🚀</span>
-                    <span className="text-xs lg:text-sm text-gray-400">{t('builtForScale')}</span>
-                  </div>
-                </div>
               </div>
 
               {/* Right Side - Enhanced Dashboard Preview Carousel */}
@@ -308,72 +452,7 @@ export const HeroSection = () => {
                     >
                       {channelPreviews.map((channel) => (
                         <div key={channel.id} className="w-full flex-shrink-0">
-                          <div className="space-y-4">
-                            {/* Channel Header */}
-                            <div className="flex items-center space-x-3 mb-4">
-                              <div className={`w-12 h-12 ${channel.color} rounded-full flex items-center justify-center`}>
-                                <span className="text-white font-bold text-lg">{channel.avatar}</span>
-                              </div>
-                              <div>
-                                <h4 className="text-white font-semibold">{channel.name}</h4>
-                                <p className="text-gray-400 text-sm">{channel.subscribers} subscribers</p>
-                              </div>
-                              <div className="ml-auto">
-                                <span className="text-green-400 text-sm font-medium">{channel.trend}</span>
-                              </div>
-                            </div>
-
-                            {/* Metrics Grid */}
-                            <div className="grid grid-cols-2 gap-3">
-                              {/* Views */}
-                              <div className="bg-black/50 rounded-lg p-4">
-                                <div className="flex items-center space-x-2 mb-2">
-                                  <Eye className="w-4 h-4 text-blue-400" />
-                                  <span className="text-gray-400 text-sm">Views</span>
-                                </div>
-                                <div className="text-xl font-bold text-white">{channel.views}</div>
-                                <div className="text-xs text-green-400">+{Math.floor(Math.random() * 20)}% this week</div>
-                              </div>
-
-                              {/* Revenue */}
-                              <div className="bg-black/50 rounded-lg p-4">
-                                <div className="flex items-center space-x-2 mb-2">
-                                  <DollarSign className="w-4 h-4 text-green-400" />
-                                  <span className="text-gray-400 text-sm">Revenue</span>
-                                </div>
-                                <div className="text-xl font-bold text-white">{channel.revenue}</div>
-                                <div className="text-xs text-green-400">+{Math.floor(Math.random() * 15)}% this month</div>
-                              </div>
-
-                              {/* Watch Time */}
-                              <div className="bg-black/50 rounded-lg p-4">
-                                <div className="flex items-center space-x-2 mb-2">
-                                  <Play className="w-4 h-4 text-purple-400" />
-                                  <span className="text-gray-400 text-sm">Watch Time</span>
-                                </div>
-                                <div className="text-xl font-bold text-white">{channel.watchTime}h</div>
-                                <div className="text-xs text-purple-400">+{Math.floor(Math.random() * 10)}% avg</div>
-                              </div>
-
-                              {/* Subscribers */}
-                              <div className="bg-black/50 rounded-lg p-4">
-                                <div className="flex items-center space-x-2 mb-2">
-                                  <UserPlus className="w-4 h-4 text-red-400" />
-                                  <span className="text-gray-400 text-sm">Subscribers</span>
-                                </div>
-                                <div className="text-xl font-bold text-white">{channel.subscribers}</div>
-                                <div className="text-xs text-red-400">+{Math.floor(Math.random() * 8)}% growth</div>
-                              </div>
-                            </div>
-
-                            {/* Performance Indicator */}
-                            <div className="mt-4 p-3 bg-gradient-to-r from-red-500/20 to-red-600/20 border border-red-500/30 rounded-lg">
-                              <div className="flex items-center justify-between">
-                                <span className="text-red-400 text-sm font-medium">Channel Performance</span>
-                                <span className="text-white font-bold">Excellent ⭐</span>
-                              </div>
-                            </div>
-                          </div>
+                          {channel.type === 'summary' ? renderSummaryView() : renderChannelView(channel)}
                         </div>
                       ))}
                     </div>
@@ -423,13 +502,29 @@ export const HeroSection = () => {
                     </button>
                   </>
                 )}
+
+                {/* Trust Indicators - Moved to right side below dashboard */}
+                <div className="flex flex-wrap items-center gap-4 lg:gap-6 pt-6 lg:pt-8 justify-center lg:justify-start">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-red-500">🔴</span>
+                    <span className="text-xs lg:text-sm text-gray-400">{t('youtubeCertified')}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-green-500">⚡</span>
+                    <span className="text-xs lg:text-sm text-gray-400">{t('creatorFocused')}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-yellow-500">🚀</span>
+                    <span className="text-xs lg:text-sm text-gray-400">{t('builtForScale')}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* Scroll Indicator - Moved down */}
+        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-gray-600 rounded-full mt-2"></div>
           </div>
