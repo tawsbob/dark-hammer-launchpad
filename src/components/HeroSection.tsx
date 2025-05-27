@@ -193,32 +193,35 @@ export const HeroSection = () => {
         
         <div className="container mx-auto px-4 lg:px-6 h-full flex flex-col justify-center relative z-10">
           <div className="max-w-7xl mx-auto w-full">
-            {/* Main Content Grid */}
+            {/* Centered Main Headlines */}
+            <div className="text-center mb-12 lg:mb-16">
+              {/* Beta Badge */}
+              <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-full mb-6">
+                <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2 animate-pulse"></div>
+                <span className="text-gray-300 text-sm font-medium uppercase tracking-wide">{t('privateBeta')}</span>
+              </div>
+
+              {/* Main Headline */}
+              <div className="space-y-4 lg:space-y-6 mb-8">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+                  <span className="block mb-2">{t('heroTitle')}</span>
+                  <span className="text-red-500 bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
+                    {t('heroTitleAccent')}
+                  </span>
+                </h1>
+                
+                <p className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                  {t('heroSubtitle')}
+                </p>
+              </div>
+            </div>
+
+            {/* Two Column Layout - Metrics Left, Dashboard Right */}
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-              {/* Left Side - Copy */}
-              <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
-                {/* Beta Badge */}
-                <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-full">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2 animate-pulse"></div>
-                  <span className="text-gray-300 text-sm font-medium uppercase tracking-wide">{t('privateBeta')}</span>
-                </div>
-
-                {/* Main Headline */}
-                <div className="space-y-4 lg:space-y-6">
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
-                    <span className="block mb-2">{t('heroTitle')}</span>
-                    <span className="text-red-500 bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
-                      {t('heroTitleAccent')}
-                    </span>
-                  </h1>
-                  
-                  <p className="text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    {t('heroSubtitle')}
-                  </p>
-                </div>
-
+              {/* Left Side - Metrics and CTA */}
+              <div className="space-y-6 lg:space-y-8">
                 {/* Performance Stats */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 max-w-2xl mx-auto lg:mx-0">
+                <div className="grid grid-cols-1 gap-4 lg:gap-6">
                   <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4 lg:p-6">
                     <div className="flex items-center space-x-2 mb-2">
                       <Users className="w-5 h-5 text-red-500" />
@@ -243,16 +246,16 @@ export const HeroSection = () => {
                 </div>
 
                 {/* Projected Values Disclaimer */}
-                <p className="text-xs text-gray-500 max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xs text-gray-500">
                   {t('projectedDisclaimer')}
                 </p>
 
-                {/* CTA Button */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                {/* CTA Button - Larger */}
+                <div className="flex flex-col gap-4">
                   <Button 
                     onClick={() => setIsDialogOpen(true)}
                     size="lg"
-                    className="bg-red-600 hover:bg-red-700 text-white px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-xl shadow-red-600/25 flex items-center justify-center space-x-2"
+                    className="bg-red-600 hover:bg-red-700 text-white px-8 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-xl shadow-red-600/25 flex items-center justify-center space-x-2"
                   >
                     <span>{t('joinWhitelistNow')}</span>
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
@@ -260,12 +263,12 @@ export const HeroSection = () => {
                 </div>
 
                 {/* Description below CTA */}
-                <p className="text-gray-400 max-w-2xl mx-auto lg:mx-0 text-sm lg:text-base">
+                <p className="text-gray-400 text-sm lg:text-base">
                   {t('exclusiveEarlyAccess')}
                 </p>
 
                 {/* Trust Indicators */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 lg:gap-8 pt-6 lg:pt-8 border-t border-gray-800">
+                <div className="flex flex-wrap items-center gap-4 lg:gap-6 pt-6 lg:pt-8 border-t border-gray-800">
                   <div className="flex items-center space-x-2">
                     <span className="text-red-500">🔴</span>
                     <span className="text-xs lg:text-sm text-gray-400">{t('youtubeCertified')}</span>
@@ -282,7 +285,7 @@ export const HeroSection = () => {
               </div>
 
               {/* Right Side - Enhanced Dashboard Preview Carousel */}
-              <div className="relative mt-0 lg:mt-0">
+              <div className="relative">
                 <div 
                   className="bg-gray-900/80 border border-gray-800 rounded-2xl p-6 backdrop-blur-xl relative"
                   onMouseEnter={() => setIsHovering(true)}
