@@ -130,6 +130,25 @@ const translations = {
     faq4Question: "What core features can I expect at launch for whitelist users?",
     faq4Answer: "Expect a powerful multi-channel dashboard, unified analytics, streamlined content uploading & scheduling, and integrated comment management – all designed to be your YouTube cockpit.",
     
+    // Lead Dialog specific translations
+    joinWhitelist: "Join Whitelist",
+    whitelistDescription: "We're finalizing the MVP. Leave your info and be notified the moment testing spots open.",
+    fullName: "Full Name",
+    enterName: "Enter your name",
+    emailAddress: "Email Address",
+    emailPlaceholder: "your@email.com",
+    phoneNumber: "Phone Number",
+    phonePlaceholder: "+1 (555) 123-4567",
+    joinWhitelistButton: "Join Whitelist",
+    joiningWhitelist: "Joining...",
+    privacyNote: "Privacy • We never sell your data",
+    nameRequired: "Please enter your name",
+    validEmail: "Please enter a valid email address",
+    validPhone: "Please enter a valid phone number",
+    welcomeWhitelist: "Welcome to the whitelist!",
+    whitelistConfirmation: "You're now on the VibeTube waitlist. We'll be in touch soon.",
+    errorTryAgain: "Something went wrong. Please try again.",
+    
     // Footer
     footerTagline: "The only tool you'll need (in beta).",
     enterpriseSecurity: "Enterprise-Grade Security",
@@ -262,6 +281,25 @@ const translations = {
     faq3Answer: "Estamos trabalhando duro para trazer o VibeTube para você em breve! Membros da lista de espera serão os primeiros a saber sobre datas de lançamento e terão acesso. (Estamos mirando Q4 2025 para nosso lançamento inicial).",
     faq4Question: "Que funcionalidades principais posso esperar no lançamento para usuários da lista de espera?",
     faq4Answer: "Espere um dashboard multi-canal poderoso, analytics unificados, upload e agendamento de conteúdo simplificados, e gerenciamento de comentários integrado – tudo projetado para ser seu cockpit do YouTube.",
+    
+    // Lead Dialog specific translations
+    joinWhitelist: "Entrar na Lista de Espera",
+    whitelistDescription: "Estamos finalizando o MVP. Deixe sua informação e seja notificado no momento que abrirem as vagas de teste.",
+    fullName: "Nome Completo",
+    enterName: "Digite seu nome",
+    emailAddress: "Endereço de Email",
+    emailPlaceholder: "seu@email.com",
+    phoneNumber: "Número de Telefone",
+    phonePlaceholder: "+55 (11) 99999-9999",
+    joinWhitelistButton: "Entrar na Lista",
+    joiningWhitelist: "Entrando...",
+    privacyNote: "Privacidade • Nunca vendemos seus dados",
+    nameRequired: "Por favor, digite seu nome",
+    validEmail: "Por favor, digite um endereço de email válido",
+    validPhone: "Por favor, digite um número de telefone válido",
+    welcomeWhitelist: "Bem-vindo à lista de espera!",
+    whitelistConfirmation: "Agora você está na lista de espera do VibeTube. Entraremos em contato em breve.",
+    errorTryAgain: "Algo deu errado. Tente novamente.",
     
     // Footer
     footerTagline: "A única ferramenta que você precisará (em beta).",
