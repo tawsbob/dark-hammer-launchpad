@@ -268,7 +268,7 @@ const translations = {
     enterpriseSecurity: "Segurança de Nível Empresarial",
     enterpriseSecurityDesc: "Criptografia de nível bancário, integração OAuth segura com YouTube e controles de permissão granulares para colaboração em equipe. Seus dados são protegidos com padrões de segurança líderes da indústria.",
     industryInsight: "Insight da Indústria:",
-    industryInsightDesc: "Criadores usando estratégias multi-canal veem 3,2x maior receita (VidIQ 2024). Usuários do VibeTube relatam crescimento de receita de 4,1x.",
+    industryInsightDesc: "Criadores usando estratégias multi-canal veem 3,2x maior receita (VidIQ 2024). Usuários do VibeTube reportam crescimento de receita de 4,1x.",
     betaUsers: "Usuários Beta",
     videosManaged: "Vídeos Gerenciados",
     satisfaction: "Satisfação",
@@ -358,7 +358,7 @@ const translations = {
     getDataSeconds: "Accede a tus datos en segundos",
     simplified: "Simplificado",
     fewerClicks: "Significativamente menos clics",
-    alwaysOnInsights: "Insights siempre activos",
+    alwaysOnInsights: "Always-on insights",
     
     // Social Proof
     futureImpact: "Impacto Futuro",
