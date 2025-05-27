@@ -396,22 +396,6 @@ const translations = {
     faq4Question: "¿Qué características principales puedo esperar en el lanzamiento para usuarios de la lista de espera?",
     faq4Answer: "Espera un poderoso panel multi-canal, analytics unificados, subida y programación de contenido simplificadas, y gestión de comentarios integrada – todo diseñado para ser tu cabina de YouTube.",
     
-    // Footer
-    footerTagline: "La única herramienta que necesitarás (en beta).",
-    enterpriseSecurity: "Seguridad de Nivel Empresarial",
-    enterpriseSecurityDesc: "Encriptación de nivel bancario, integración OAuth segura con YouTube y controles de permisos granulares para colaboración en equipo. Tus datos están protegidos con estándares de seguridad líderes en la industria.",
-    industryInsight: "Insight de la Industria:",
-    industryInsightDesc: "Los creadores que usan estrategias multi-canal ven 3.2x mayores ingresos (VidIQ 2024). Los usuarios de VibeTube reportan un crecimiento de ingresos de 4.1x.",
-    betaUsers: "Usuarios Beta",
-    videosManaged: "Videos Gestionados",
-    satisfaction: "Satisfacción",
-    support: "Soporte",
-    privacyPolicy: "Política de Privacidad",
-    termsOfService: "Términos de Servicio",
-    apiDocs: "Docs de API",
-    status: "Estado",
-    footerCopyright: "Construido para creadores, por creadores."
-  },
     // Lead Dialog specific translations
     joinWhitelist: "Unirse a la Lista de Espera",
     whitelistDescription: "Estamos finalizando el MVP. Deja tu información y sé notificado en el momento que abran las plazas de prueba.",
