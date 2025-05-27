@@ -345,7 +345,7 @@ export const HeroSection = () => {
         <div className="container mx-auto px-4 lg:px-6 h-full flex flex-col justify-center relative z-10">
           <div className="max-w-7xl mx-auto w-full">
             {/* Centered Main Headlines */}
-            <div className="text-center mb-12 lg:mb-16">
+            <div className="text-center mb-12">
               {/* Beta Badge */}
               <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-full mb-6">
                 <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2 animate-pulse"></div>
@@ -353,21 +353,21 @@ export const HeroSection = () => {
               </div>
 
               {/* Main Headline - Reduced sizes */}
-              <div className="space-y-3 lg:space-y-4 mb-6">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+              <div className="space-y-3 mb-6">
+                <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-tight">
                   <span className="block mb-2">{t('heroTitle')}</span>
                   <span className="text-red-500 bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
                     {t('heroTitleAccent')}
                   </span>
                 </h1>
                 
-                <p className="text-base lg:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-sm lg:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
                   {t('heroSubtitle')}
                 </p>
               </div>
 
-              {/* CTA Button - Moved up */}
-              <div className="mb-8">
+              {/* CTA Button - Centered and moved up */}
+              <div className="mb-8 flex justify-center">
                 <Button 
                   onClick={() => setIsDialogOpen(true)}
                   size="lg"
@@ -376,18 +376,18 @@ export const HeroSection = () => {
                   <span>{t('joinWhitelistNow')}</span>
                   <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                 </Button>
-                <p className="text-gray-400 text-sm lg:text-base mt-3">
-                  {t('exclusiveEarlyAccess')}
-                </p>
               </div>
+              <p className="text-gray-400 text-sm lg:text-base mb-8">
+                {t('exclusiveEarlyAccess')}
+              </p>
             </div>
 
             {/* Two Column Layout - Metrics Left, Dashboard Right */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-              {/* Left Side - Metrics (3 cards now) */}
-              <div className="space-y-6 lg:space-y-8">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center gap-8">
+              {/* Left Side - Metrics (3 cards) */}
+              <div className="w-full lg:w-5/12 space-y-6">
                 {/* Performance Stats - 3 cards */}
-                <div className="grid grid-cols-1 gap-4 lg:gap-6">
+                <div className="grid grid-cols-1 gap-4">
                   <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4 lg:p-6">
                     <div className="flex items-center space-x-2 mb-2">
                       <Users className="w-5 h-5 text-red-500" />
@@ -413,12 +413,28 @@ export const HeroSection = () => {
                   <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4 lg:p-6">
                     <div className="flex items-center space-x-2 mb-2">
                       <Target className="w-5 h-5 text-blue-500" />
-                      <span className="text-blue-400 text-sm font-medium">Vision</span>
+                      <span className="text-blue-400 text-sm font-medium">{t('vision')}</span>
                     </div>
                     <div className="text-xl lg:text-2xl font-bold text-white">
-                      Universal Control Hub
+                      {t('universalControlHub')}
                       <span className="block text-xs lg:text-sm text-yellow-400 mt-1">{t('projected')}</span>
                     </div>
+                  </div>
+                </div>
+
+                {/* Three Badges - Moved below left cards */}
+                <div className="flex flex-wrap items-center gap-4 pt-4">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-red-500">🔴</span>
+                    <span className="text-xs lg:text-sm text-gray-400">{t('youtubeCertified')}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-green-500">⚡</span>
+                    <span className="text-xs lg:text-sm text-gray-400">{t('creatorFocused')}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-yellow-500">🚀</span>
+                    <span className="text-xs lg:text-sm text-gray-400">{t('builtForScale')}</span>
                   </div>
                 </div>
 
@@ -429,7 +445,7 @@ export const HeroSection = () => {
               </div>
 
               {/* Right Side - Enhanced Dashboard Preview Carousel */}
-              <div className="relative">
+              <div className="w-full lg:w-7/12 relative">
                 <div 
                   className="bg-gray-900/80 border border-gray-800 rounded-2xl p-6 backdrop-blur-xl relative"
                   onMouseEnter={() => setIsHovering(true)}
@@ -502,31 +518,17 @@ export const HeroSection = () => {
                     </button>
                   </>
                 )}
+              </div>
+            </div>
 
-                {/* Trust Indicators - Moved to right side below dashboard */}
-                <div className="flex flex-wrap items-center gap-4 lg:gap-6 pt-6 lg:pt-8 justify-center lg:justify-start">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-red-500">🔴</span>
-                    <span className="text-xs lg:text-sm text-gray-400">{t('youtubeCertified')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-green-500">⚡</span>
-                    <span className="text-xs lg:text-sm text-gray-400">{t('creatorFocused')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-yellow-500">🚀</span>
-                    <span className="text-xs lg:text-sm text-gray-400">{t('builtForScale')}</span>
-                  </div>
+            {/* Animated Mouse Icon - Repositioned below cards */}
+            <div className="flex justify-center mt-16 mb-8">
+              <div className="animate-bounce opacity-75">
+                <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
+                  <div className="w-1 h-3 bg-gray-600 rounded-full mt-2"></div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator - Moved down */}
-        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-600 rounded-full mt-2"></div>
           </div>
         </div>
       </section>

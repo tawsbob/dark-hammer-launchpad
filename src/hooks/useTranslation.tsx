@@ -26,9 +26,11 @@ const translations = {
     creatorFocused: "Creator Focused",
     builtForScale: "Built for Scale",
     
-    // Stats
+    // Stats - Adding new translations
     futureGoal: "Future Goal",
     ourAim: "Our Aim",
+    vision: "Vision",
+    universalControlHub: "Universal Control Hub",
     poweringThousands: "Powering thousands",
     saveFullDay: "Save a full day weekly",
     projected: "Projected*",
@@ -178,9 +180,11 @@ const translations = {
     creatorFocused: "Focado no Criador",
     builtForScale: "Feito para Escalar",
     
-    // Stats
+    // Stats - Adding Portuguese translations
     futureGoal: "Meta Futura",
     ourAim: "Nosso Objetivo",
+    vision: "Visão",
+    universalControlHub: "Central de Controle Universal",
     poweringThousands: "Potencializando milhares",
     saveFullDay: "Economizar um dia inteiro por semana",
     projected: "Projetado*",
@@ -330,9 +334,11 @@ const translations = {
     creatorFocused: "Enfocado en Creadores",
     builtForScale: "Hecho para Escalar",
     
-    // Stats
+    // Stats - Adding Spanish translations
     futureGoal: "Meta Futura",
     ourAim: "Nuestro Objetivo",
+    vision: "Visión",
+    universalControlHub: "Centro de Control Universal",
     poweringThousands: "Potenciando miles",
     saveFullDay: "Ahorrar un día completo semanalmente",
     projected: "Proyectado*",
