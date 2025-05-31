@@ -4,10 +4,10 @@ export const SocialProofSection = () => {
   const { t } = useTranslation();
   
   const metrics = [
-    { value: "1,200+*", label: t('activeCreators'), color: "text-green-400" },
-    { value: "50M+*", label: t('videosManaged'), color: "text-red-400" },
-    { value: "8.5hrs*", label: t('avgTimeSaved'), color: "text-yellow-400" },
-    { value: "98%*", label: t('satisfactionRate'), color: "text-green-400" }
+    { value: t('thousands'), label: t('futureGoalCreators'), color: "text-red-400" },
+    { value: t('billions'), label: t('futureGoalViews'), color: "text-red-400" },
+    { value: t('fullDay'), label: t('ourAimWeekly'), color: "text-yellow-400" },
+    { value: "98%*", label: t('ourCommitment'), color: "text-red-400" }
   ];
 
   const testimonials = [
@@ -22,13 +22,13 @@ export const SocialProofSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-red-900/20 border border-red-600/30 rounded-full mb-6">
-            <span className="text-red-300 text-sm font-medium">{t('provenResults')}</span>
+            <span className="text-red-300 text-sm font-medium">{t('futureImpact')}</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            {t('realNumbers')}
+            {t('imagineImpact')}
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            {t('realNumbersSubtitle')}
+            {t('joinWhitelistRevolution')}
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export const SocialProofSection = () => {
         {/* Disclaimer */}
         <div className="text-center mb-20">
           <p className="text-xs text-gray-500">
-            {t('projectedValues')}
+            {t('estimatesDisclaimer')}
           </p>
         </div>
 
@@ -78,15 +78,16 @@ export const SocialProofSection = () => {
         {/* Beta Access CTA */}
         <div className="text-center mt-20">
           <div className="bg-gradient-to-r from-red-900/20 to-red-800/20 border border-red-600/30 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">{t('betaAccessCTA')}</h3>
-            <p className="text-gray-300 mb-6">{t('betaAccessDescription')}</p>
+            <h3 className="text-2xl font-bold text-white mb-4">{t('exclusiveWhitelistOpen')}</h3>
+            <p className="text-gray-300 mb-6">{t('beFirstExperience')}</p>
+            <p className="text-gray-400 mb-6">{t('joinWhitelistBuild')}</p>
             <div className="flex items-center justify-center space-x-4">
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-green-400 text-sm">{t('spotsRemaining')}: 47</span>
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                <span className="text-red-400 text-sm">{t('whitelistOpenLimited')}</span>
               </div>
               <div className="text-gray-500">•</div>
-              <div className="text-gray-400 text-sm">{t('nextBatch')}: March 2024</div>
+              <div className="text-gray-400 text-sm">{t('targetLaunch')}</div>
             </div>
           </div>
         </div>

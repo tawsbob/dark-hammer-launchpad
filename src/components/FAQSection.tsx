@@ -50,12 +50,12 @@ export const FAQSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-white dark:bg-gray-900 rounded-lg border-0 shadow-sm px-6"
+                className="bg-white dark:bg-gray-900 rounded-lg border-0 shadow-sm px-4 lg:px-6"
               >
-                <AccordionTrigger className="text-left text-title-medium font-semibold text-gray-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 py-6">
+                <AccordionTrigger className="text-left text-base lg:text-lg font-semibold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 py-4 lg:py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-body-medium text-gray-600 dark:text-gray-300 pb-6 leading-relaxed">
+                <AccordionContent className="text-sm lg:text-base text-gray-600 dark:text-gray-300 pb-4 lg:pb-6 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
