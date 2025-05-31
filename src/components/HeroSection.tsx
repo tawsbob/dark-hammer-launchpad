@@ -308,10 +308,7 @@ export const HeroSection = () => {
       <header className="fixed top-8 left-0 right-0 z-40 bg-black/90 backdrop-blur-xl border-b border-red-900/20">
         <div className="container mx-auto px-4 lg:px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-xl">📺</span>
-            </div>
-            <span className="text-xl lg:text-2xl font-bold text-white">VibeTube</span>
+            <img src="/logo.png" alt="VibeTube" className="w-40" />
             <div className="hidden md:flex items-center space-x-1 ml-4 lg:ml-6">
               <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
               <span className="text-sm text-red-400">Live Beta</span>

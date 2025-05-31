@@ -1,46 +1,43 @@
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useTranslation } from '@/hooks/useTranslation';
 
 export const FAQSection = () => {
   const { t } = useTranslation();
-
+  
   const faqs = [
     {
-      question: t("faqChannelsQuestion"),
-      answer: t("faqChannelsAnswer")
+      question: t('faq1Question'),
+      answer: t('faq1Answer')
     },
     {
-      question: t("faqShortsQuestion"),
-      answer: t("faqShortsAnswer")
+      question: t('faq2Question'),
+      answer: t('faq2Answer')
     },
     {
-      question: t("faqAnalyticsQuestion"),
-      answer: t("faqAnalyticsAnswer")
+      question: t('faq3Question'),
+      answer: t('faq3Answer')
     },
     {
-      question: t("faqSchedulingQuestion"),
-      answer: t("faqSchedulingAnswer")
-    },
-    {
-      question: t("faqMobileQuestion"),
-      answer: t("faqMobileAnswer")
+      question: t('faq4Question'),
+      answer: t('faq4Answer')
     }
   ];
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-display-small font-bold text-gray-900 dark:text-white mb-4">
-            {t("faqTitle")}
+    <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-800">
+      <div className="container mx-auto px-4 lg:px-6">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('whitelistFAQ')}
           </h2>
-          <p className="text-title-large text-gray-600 dark:text-gray-300">
-            {t("faqSubtitle")}
+          <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
+            Everything you need to know about VibeTube
           </p>
         </div>
 

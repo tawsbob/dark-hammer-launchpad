@@ -77,9 +77,9 @@ const translations = {
     earlyAccessPriority: "Whitelist members get priority access to new features.",
     
     // Etapas
-    developmentEtapas: "Development Etapas",
+    developmentEtapas: "Development Steps",
     trackProgress: "Track our progress as we build the future of creator tools",
-    etapa: "Etapa",
+    etapa: "Step",
     
     etapa1Desc: "Core multi-channel dashboard, unified analytics, simplified upload & scheduling. Your feedback will be key!",
     etapa2Desc: "AI-powered content optimization tools, deeper analytics, and more time-saving automations based on user needs.",
