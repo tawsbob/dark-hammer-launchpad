@@ -9,10 +9,7 @@ export const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">📺</span>
-            </div>
-            <span className="text-3xl font-bold">VibeTube</span>
+            <img src="/logo.png" alt="VibeTube" className="w-40" />
           </div>
           
           <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">

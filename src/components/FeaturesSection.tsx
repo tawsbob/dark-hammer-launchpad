@@ -158,7 +158,7 @@ export const FeaturesSection = () => {
         </div>
 
         {/* Internal Target Metrics */}
-        <div className="text-center">
+        <div className="text-center" id="stats">
           <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 border border-gray-700 rounded-2xl p-6 lg:p-8 max-w-4xl mx-auto">
             <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">{t('ourGoalExperience')}</h3>
             <p className="text-gray-300 mb-6 text-sm lg:text-base">{t('betaTestsAim')}</p>
